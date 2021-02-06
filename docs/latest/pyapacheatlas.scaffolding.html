@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyapacheatlas.scaffolding package &#8212; PyApacheAtlas 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pyapacheatlas.readers package" href="pyapacheatlas.readers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.readers.html" title="pyapacheatlas.readers package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" accesskey="U">pyapacheatlas package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.scaffolding package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pyapacheatlas-scaffolding-package">
+<h1>pyapacheatlas.scaffolding package<a class="headerlink" href="#pyapacheatlas-scaffolding-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pyapacheatlas.scaffolding.column_lineage">
+<span id="pyapacheatlas-scaffolding-column-lineage-module"></span><h2>pyapacheatlas.scaffolding.column_lineage module<a class="headerlink" href="#module-pyapacheatlas.scaffolding.column_lineage" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pyapacheatlas.scaffolding.column_lineage.column_lineage_scaffold">
+<code class="sig-prename descclassname">pyapacheatlas.scaffolding.column_lineage.</code><code class="sig-name descname">column_lineage_scaffold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datasource</span></em>, <em class="sig-param"><span class="n">use_column_mapping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">column_attributes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">table_attributes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">table_column_relationship_attributes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">column_lineage_attributes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">table_process_attributes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">column_lineage_process_attributes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">table_process_column_lineage_relationship_attributes</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.scaffolding.column_lineage.column_lineage_scaffold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a base set of type definitions that adhere to the Hive Bridge
+style of Atlas Column Lineage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datasource</strong> (<em>str</em>) – The name of the data source. Acts as a prefix
+for all other type defs.</p></li>
+<li><p><strong>use_column_mapping</strong> (<em>bool</em>) – If True, add the columnMapping attribute
+to the table process.</p></li>
+<li><p><strong>optional column_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the column entity type.</p></li>
+<li><p><strong>optional table_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the table entity type.</p></li>
+<li><p><strong>optional table_column_relationship_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the table column relationship type.</p></li>
+<li><p><strong>optional column_lineage_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the column lineage process entity type.</p></li>
+<li><p><strong>optional table_process_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the table process entity type.</p></li>
+<li><p><strong>optional column_lineage_process_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the column lineage process entity type.</p></li>
+<li><p><strong>optional table_process_column_lineage_relationship_attributes</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em><em>,</em>) – Attribute Defs to add to the table process column lineage
+relationship type.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pyapacheatlas.scaffolding package</a><ul>
+<li><a class="reference internal" href="#module-pyapacheatlas.scaffolding.column_lineage">pyapacheatlas.scaffolding.column_lineage module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyapacheatlas.readers.html"
+                        title="previous chapter">pyapacheatlas.readers package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyapacheatlas.scaffolding.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.readers.html" title="pyapacheatlas.readers package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" >pyapacheatlas package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.scaffolding package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

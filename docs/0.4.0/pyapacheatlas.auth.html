@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyapacheatlas.auth package &#8212; PyApacheAtlas 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyapacheatlas.core package" href="pyapacheatlas.core.html" />
+    <link rel="prev" title="pyapacheatlas package" href="pyapacheatlas.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.core.html" title="pyapacheatlas.core package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.html" title="pyapacheatlas package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" accesskey="U">pyapacheatlas package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.auth package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pyapacheatlas-auth-package">
+<h1>pyapacheatlas.auth package<a class="headerlink" href="#pyapacheatlas-auth-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pyapacheatlas.auth.base">
+<span id="pyapacheatlas-auth-base-module"></span><h2>pyapacheatlas.auth.base module<a class="headerlink" href="#module-pyapacheatlas.auth.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyapacheatlas.auth.base.AtlasAuthBase">
+<em class="property">class </em><code class="sig-prename descclassname">pyapacheatlas.auth.base.</code><code class="sig-name descname">AtlasAuthBase</code><a class="headerlink" href="#pyapacheatlas.auth.base.AtlasAuthBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>The base class for authentication to your Apache Atlas server.</p>
+<dl class="py method">
+<dt id="pyapacheatlas.auth.base.AtlasAuthBase.get_authentication_headers">
+<em class="property">abstract </em><code class="sig-name descname">get_authentication_headers</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.auth.base.AtlasAuthBase.get_authentication_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide the authentication headers for HTTP requests.
+:return: The authorization headers.
+:rtype: dict(str, str)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyapacheatlas.auth.basic">
+<span id="pyapacheatlas-auth-basic-module"></span><h2>pyapacheatlas.auth.basic module<a class="headerlink" href="#module-pyapacheatlas.auth.basic" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyapacheatlas.auth.basic.BasicAuthentication">
+<em class="property">class </em><code class="sig-prename descclassname">pyapacheatlas.auth.basic.</code><code class="sig-name descname">BasicAuthentication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.auth.basic.BasicAuthentication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyapacheatlas.auth.base.AtlasAuthBase" title="pyapacheatlas.auth.base.AtlasAuthBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.auth.base.AtlasAuthBase</span></code></a></p>
+<p>Authenticates using basic authentication.  Primarily used for testing
+on local</p>
+<dl class="py method">
+<dt id="pyapacheatlas.auth.basic.BasicAuthentication.get_authentication_headers">
+<code class="sig-name descname">get_authentication_headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.auth.basic.BasicAuthentication.get_authentication_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide the authentication headers for HTTP requests.
+:return: The authorization headers.
+:rtype: dict(str, str)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyapacheatlas.auth.serviceprincipal">
+<span id="pyapacheatlas-auth-serviceprincipal-module"></span><h2>pyapacheatlas.auth.serviceprincipal module<a class="headerlink" href="#module-pyapacheatlas.auth.serviceprincipal" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyapacheatlas.auth.serviceprincipal.ServicePrincipalAuthentication">
+<em class="property">class </em><code class="sig-prename descclassname">pyapacheatlas.auth.serviceprincipal.</code><code class="sig-name descname">ServicePrincipalAuthentication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tenant_id</span></em>, <em class="sig-param"><span class="n">client_id</span></em>, <em class="sig-param"><span class="n">client_secret</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.auth.serviceprincipal.ServicePrincipalAuthentication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyapacheatlas.auth.base.AtlasAuthBase" title="pyapacheatlas.auth.base.AtlasAuthBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.auth.base.AtlasAuthBase</span></code></a></p>
+<p>Authenticates to the Azure OAuth provider using a service principal.</p>
+<dl class="py method">
+<dt id="pyapacheatlas.auth.serviceprincipal.ServicePrincipalAuthentication.get_authentication_headers">
+<code class="sig-name descname">get_authentication_headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.auth.serviceprincipal.ServicePrincipalAuthentication.get_authentication_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current access token or refreshes the token if it
+has expired.
+:return: The authorization headers.
+:rtype: dict(str, str)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pyapacheatlas.auth package</a><ul>
+<li><a class="reference internal" href="#module-pyapacheatlas.auth.base">pyapacheatlas.auth.base module</a></li>
+<li><a class="reference internal" href="#module-pyapacheatlas.auth.basic">pyapacheatlas.auth.basic module</a></li>
+<li><a class="reference internal" href="#module-pyapacheatlas.auth.serviceprincipal">pyapacheatlas.auth.serviceprincipal module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyapacheatlas.html"
+                        title="previous chapter">pyapacheatlas package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyapacheatlas.core.html"
+                        title="next chapter">pyapacheatlas.core package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyapacheatlas.auth.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.core.html" title="pyapacheatlas.core package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.html" title="pyapacheatlas package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" >pyapacheatlas package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.auth package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>
