@@ -420,33 +420,6 @@ TypeCategory.ENTITY. Optional if name or guid is specified.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyapacheatlas.core.client.AtlasClient.partial_update_entity">
-<code class="sig-name descname">partial_update_entity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">guid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">typeName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">qualifiedName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attributes</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.client.AtlasClient.partial_update_entity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Partially update an entity without having to construct the entire object
-and its subsequent required attributes. Using guid, you can update a
-single attribute. Using typeName and qualifiedName, you can update
-multiple attributes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>guid</strong> (<em>str</em>) – The guid for the entity you want to update. Not used if using
-typeName and qualifiedName.</p></li>
-<li><p><strong>qualifiedName</strong> (<em>str</em>) – The qualified name of the entity you want to update. Must provide
-typeName if using qualifiedName. Ignored if using guid parameter.</p></li>
-<li><p><strong>typeName</strong> (<em>str</em>) – The type name of the entity you want to update. Must provide
-qualifiedName if using typeName. Ignored if using guid parameter.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The results of your entity update.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="pyapacheatlas.core.client.AtlasClient.search_entities">
 <code class="sig-name descname">search_entities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">search_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">starting_offset</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.client.AtlasClient.search_entities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search entities based on a query and automaticall handles limits and
@@ -806,9 +779,6 @@ a column lineage scenario.</p></li>
 atlas entity may require.</p></li>
 <li><p><strong>optional classifications</strong> (<em>dict</em><em>,</em>) – Classifications that may
 be applied to this atlas entity.</p></li>
-<li><p><strong>dict</strong><strong>(</strong><strong>str</strong><strong>, </strong><strong>list</strong><strong>(</strong><strong>dict</strong><strong>(</strong><strong>strt</strong><strong>,</strong><strong>str</strong><strong>)</strong><strong>)</strong><strong>)</strong><strong>)</strong><strong>, </strong><strong>optional contacts</strong> (<em>dict</em><em>(</em><em>str</em><em>,</em>) – Contacts should contain keys Experts and/or Owners. Their values should
-be a list of dicts with keys id and info. Id is a microsoft graph
-object id. Info is a string of extra information.</p></li>
 </ul>
 </dd>
 </dl>
@@ -904,21 +874,13 @@ the passed in AtlasEntity.</p>
 <dl class="py method">
 <dt id="pyapacheatlas.core.entity.AtlasEntity.to_json">
 <code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minimum</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.entity.AtlasEntity.to_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert this atlas entity to a dict / json. Returns typename, guid,
-and qualified name if guid is not none. If guid is None then this will
-return typename, uniqueAttributes with a sub object of qualified name.</p>
-<p>By specifying a guid, this method assumes you will be uploading the
-entity (and want or at least willing to accept changes to the entity).
-By NOT specifying a guid, this assumes you will be using the entity as
-a reference used by another one in the upload (e.g. creating a process
-entity that uses an existing entity as an input or output).</p>
+<dd><p>Convert this atlas entity to a dict / json.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>minimum</strong> (<em>bool</em>) – If True, returns only the
-type name, qualified name, and guid of the entity (when guid is
-defined). If True and guid is None, returns typeName,
-uniqueAttributes and qualifiedName. If False, return the full entity
-and its attributes and relationship attributes.</p>
+type name, qualified name, and guid of the entity.  Useful
+for being referenced in other entities like process inputs
+and outputs.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The json representation of this atlas entity.</p>
