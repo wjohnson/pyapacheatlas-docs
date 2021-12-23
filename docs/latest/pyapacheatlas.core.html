@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>pyapacheatlas.core package &#8212; PyApacheAtlas 0.9.0 documentation</title>
+    <title>pyapacheatlas.core package &#8212; PyApacheAtlas 0.10.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="pyapacheatlas.auth.html" title="pyapacheatlas.auth package"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" accesskey="U">pyapacheatlas package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core package</a></li> 
@@ -1027,6 +1027,158 @@ it much slower to do many updates.</p>
 </dd></dl>
 
 </section>
+<section id="module-pyapacheatlas.core.discovery">
+<span id="pyapacheatlas-core-discovery-module"></span><h2>pyapacheatlas.core.discovery module<a class="headerlink" href="#module-pyapacheatlas.core.discovery" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyapacheatlas.core.discovery.PurviewDiscoveryClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyapacheatlas.core.discovery.</span></span><span class="sig-name descname"><span class="pre">PurviewDiscoveryClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authentication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.discovery.PurviewDiscoveryClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyapacheatlas.core.util.AtlasBaseClient" title="pyapacheatlas.core.util.AtlasBaseClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.core.util.AtlasBaseClient</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.discovery.PurviewDiscoveryClient.autocomplete">
+<span class="sig-name descname"><span class="pre">autocomplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2021-05-01-preview'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.discovery.PurviewDiscoveryClient.autocomplete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an autocomplete search request on Azure Purview’s
+<cite>/catalog/api/search/autocomplete</cite> endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>dict</em>) – An OPTIONAL fully formed json body. If provided, all other params
+will be ignored except api-version.</p></li>
+<li><p><strong>keywords</strong> (<em>str</em>) – The keywords applied to all fields that support autocomplete
+operation. It must be at least 1 character, and no more than 100
+characters.</p></li>
+<li><p><strong>filter</strong> (<em>dict</em>) – A json object that includes and, not, or conditions and ultimately
+a dict that contains attributeName, operator, and attributeValue.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The number of search results to return.</p></li>
+<li><p><strong>api_version</strong> (<em>str</em>) – The Purview API version to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Autocomplete Search results with a value field.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.discovery.PurviewDiscoveryClient.browse">
+<span class="sig-name descname"><span class="pre">browse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entityType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2021-05-01-preview'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.discovery.PurviewDiscoveryClient.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a browse search for Purview based on the entity against the
+<cite>/catalog/api/browse endpoint</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entityType</strong> (<em>str</em>) – The entity type to browse as the root level entry point. This must
+be a valid Purview built-in or custom type.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – The path to browse the next level child entities.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The number of search results to return.</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – The number of search results to skip.</p></li>
+<li><p><strong>api_version</strong> (<em>str</em>) – The Purview API version to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Search query results with &#64;search.count and value fields.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.discovery.PurviewDiscoveryClient.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxonomySetting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2021-05-01-preview'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.discovery.PurviewDiscoveryClient.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a search query against Azure Purview’s <cite>/catalog/api/search/query</cite>
+endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>dict</em>) – An optional fully formed json body. If provided, all other params
+will be ignored except api-version.</p></li>
+<li><p><strong>keywords</strong> (<em>str</em>) – The keyword to search. You can use None or ‘*’ for wildcard, or
+a string to search.</p></li>
+<li><p><strong>filter</strong> (<em>dict</em>) – A json object that includes and, not, or conditions and ultimately
+a dict that contains attributeName, operator, and attributeValue.</p></li>
+<li><p><strong>facets</strong> (<em>dict</em>) – The kind of aggregate count you want to retrieve. Should be a dict
+that contains fields: count, facet, and sort.</p></li>
+<li><p><strong>taxonomySetting</strong> (<em>dict</em>) – Undocumented.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The number of search results to return.</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – The number of search results to skip.</p></li>
+<li><p><strong>api_version</strong> (<em>str</em>) – The Purview API version to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Search query results with &#64;search.count and value fields.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.discovery.PurviewDiscoveryClient.search_entities">
+<span class="sig-name descname"><span class="pre">search_entities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2021-05-01-preview'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.discovery.PurviewDiscoveryClient.search_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search entities based on a query and automaticall handles limits and
+offsets to page through results.</p>
+<p>The limit provides how many records are returned in each batch with a
+maximum of 1,000 entries per page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – The search query to be executed.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – A non-zero integer representing how many entities to
+return for each page of the search results.</p></li>
+<li><p><strong>search_filter</strong> (<em>dict</em>) – A json object that includes and, not, or conditions and ultimately
+a dict that contains attributeName, operator, and attributeValue.</p></li>
+<li><p><strong>facets</strong> (<em>dict</em>) – The kind of aggregate count you want to retrieve. Should be a dict
+that contains fields: count, facet, and sort.</p></li>
+<li><p><strong>taxonomySetting</strong> (<em>dict</em>) – Undocumented.</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – The number of search results to skip.</p></li>
+<li><p><strong>api_version</strong> (<em>str</em>) – The Purview API version to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The results of your search as a generator.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Iterator(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.discovery.PurviewDiscoveryClient.suggest">
+<span class="sig-name descname"><span class="pre">suggest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2021-05-01-preview'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.discovery.PurviewDiscoveryClient.suggest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a sugest search request on Azure Purview’s
+<cite>/catalog/api/search/suggest</cite> endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>dict</em>) – An optional fully formed json body. If provided, all other params
+will be ignored except api-version.</p></li>
+<li><p><strong>keywords</strong> (<em>str</em>) – The keywords applied to all fields that support autocomplete
+operation. It must be at least 1 character, and no more than 100
+characters.</p></li>
+<li><p><strong>filter</strong> (<em>dict</em>) – A json object that includes and, not, or conditions and ultimately
+a dict that contains attributeName, operator, and attributeValue.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The number of search results to return.</p></li>
+<li><p><strong>api_version</strong> (<em>str</em>) – The Purview API version to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Suggest Search results with a value field.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-pyapacheatlas.core.entity">
 <span id="pyapacheatlas-core-entity-module"></span><h2>pyapacheatlas.core.entity module<a class="headerlink" href="#module-pyapacheatlas.core.entity" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -1405,7 +1557,7 @@ key glossaryGuid and value of the glossary guid you want to use.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#pyapacheatlas.core.util.AtlasBaseClient" title="pyapacheatlas.core.util.AtlasBaseClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.core.util.AtlasBaseClient</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyapacheatlas.core.glossary.GlossaryClient.assignTerm">
-<span class="sig-name descname"><span class="pre">assignTerm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termGuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Glossary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.GlossaryClient.assignTerm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">assignTerm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termGuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Glossary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_guid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.GlossaryClient.assignTerm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a single term to many entities. Provide either a term guid
 (if you know it) or provide the term name and glossary name. If
 term name is provided, term guid is ignored.</p>
@@ -1434,7 +1586,7 @@ error. Alternatively, you may provide your own dict that contains a
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyapacheatlas.core.glossary.GlossaryClient.delete_assignedTerm">
-<span class="sig-name descname"><span class="pre">delete_assignedTerm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termGuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Glossary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.GlossaryClient.delete_assignedTerm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">delete_assignedTerm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termGuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Glossary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_guid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.GlossaryClient.delete_assignedTerm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a single term from many entities. Provide either a term guid
 (if you know it) or provide the term name and glossary name. If
 term name is provided, term guid is ignored.</p>
@@ -1527,7 +1679,7 @@ glossary_name parameter.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyapacheatlas.core.glossary.GlossaryClient.get_termAssignedEntities">
-<span class="sig-name descname"><span class="pre">get_termAssignedEntities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">termGuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Glossary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.GlossaryClient.get_termAssignedEntities" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_termAssignedEntities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">termGuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Glossary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glossary_guid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.GlossaryClient.get_termAssignedEntities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Page through the assigned entities for the given term.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1652,8 +1804,8 @@ Name,Definition,Status,Related Terms,Synonyms,Acronym,Experts,Stewards</p>
 <p>For custom term templates, additional attributes must include
 [Attribute][termTemplateName]attributeName as the header.</p>
 <p>In the resulting JSON, you will receive an operation guid that can be
-passed to the <cite>PurviewClient.import_terms_status</cite> method to determine
-the success or failure of the import.</p>
+passed to the <cite>PurviewClient.glossary.import_terms_status</cite> method to
+determine the success or failure of the import.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1700,8 +1852,9 @@ number of errors.</p>
 <dt class="sig sig-object py" id="pyapacheatlas.core.glossary.PurviewGlossaryClient.upload_term">
 <span class="sig-name descname"><span class="pre">upload_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">term</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">includeTermHierarchy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.PurviewGlossaryClient.upload_term" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upload a single term to Azure Purview. If you plan on uploading many
-terms programmatically, you might look at <cite>PurviewClient.upload_terms</cite>
-or <cite>PurviewClient.import_terms</cite>.</p>
+terms programmatically, you might look at
+<cite>PurviewClient.glossary.upload_terms</cite> or 
+<cite>PurviewClient.glossary.import_terms</cite>.</p>
 <p>Provide a PurviewGlossaryTerm or dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1735,7 +1888,8 @@ or <cite>PurviewClient.import_terms</cite>.</p>
 <span class="sig-name descname"><span class="pre">upload_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">includeTermHierarchy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.PurviewGlossaryClient.upload_terms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upload many terms to Azure Purview. However, if you
 plan on uploading many terms with many details, you might look at
-<cite>PurviewClient.import_terms</cite> instead which supports a csv upload.</p>
+<cite>PurviewClient.glossary.import_terms</cite> instead which supports a csv
+upload.</p>
 <p>Provide a list of PurviewGlossaryTerms or dictionaries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2188,16 +2342,13 @@ or AtlasAttributeDefs. You can expand a list with <cite>*my_list</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyapacheatlas.core.typedef.AtlasStructDef.to_json">
 <span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">omit_nulls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.typedef.AtlasStructDef.to_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the typedef object to a dict / json.</p>
+<dd><p>Convert the defintion to a JSON dict.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>omit_null</strong> (<em>bool</em>) – If True, omits keys with value of None.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The definition as a dict.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The dict / json version of the type def.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2352,16 +2503,13 @@ or AtlasAttributeDefs. You can expand a list with <cite>*my_list</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyapacheatlas.core.typedef.EntityTypeDef.to_json">
 <span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">omit_nulls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.typedef.EntityTypeDef.to_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the typedef object to a dict / json.</p>
+<dd><p>Convert the defintion to a JSON dict.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>omit_null</strong> (<em>bool</em>) – If True, omits keys with value of None.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The definition as a dict.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The dict / json version of the type def.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2424,16 +2572,13 @@ looking at COMPOSITION to create a parent/child relationship.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyapacheatlas.core.typedef.RelationshipTypeDef.to_json">
 <span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">omit_nulls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.typedef.RelationshipTypeDef.to_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the typedef object to a dict / json.</p>
+<dd><p>Convert the defintion to a JSON dict.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>omit_null</strong> (<em>bool</em>) – If True, omits keys with value of None.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The definition as a dict.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The dict / json version of the type def.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2741,6 +2886,7 @@ UsingInvalidAttributes, and MissingRequiredAttributes.</p>
   <ul>
 <li><a class="reference internal" href="#">pyapacheatlas.core package</a><ul>
 <li><a class="reference internal" href="#module-pyapacheatlas.core.client">pyapacheatlas.core.client module</a></li>
+<li><a class="reference internal" href="#module-pyapacheatlas.core.discovery">pyapacheatlas.core.discovery module</a></li>
 <li><a class="reference internal" href="#module-pyapacheatlas.core.entity">pyapacheatlas.core.entity module</a></li>
 <li><a class="reference internal" href="#module-pyapacheatlas.core.glossary">pyapacheatlas.core.glossary module</a></li>
 <li><a class="reference internal" href="#module-pyapacheatlas.core.msgraph">pyapacheatlas.core.msgraph module</a></li>
@@ -2793,7 +2939,7 @@ UsingInvalidAttributes, and MissingRequiredAttributes.</p>
         <li class="right" >
           <a href="pyapacheatlas.auth.html" title="pyapacheatlas.auth package"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.10.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" >pyapacheatlas package</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core package</a></li> 
