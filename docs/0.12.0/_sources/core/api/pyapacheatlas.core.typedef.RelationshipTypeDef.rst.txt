@@ -1,0 +1,30 @@
+﻿pyapacheatlas.core.typedef.RelationshipTypeDef
+==============================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: RelationshipTypeDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RelationshipTypeDef.__init__
+      ~RelationshipTypeDef.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RelationshipTypeDef.endDef1
+      ~RelationshipTypeDef.endDef2
+   
+   

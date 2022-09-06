@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.whatif.WhatIfValidator.entity\_would\_overwrite
+==================================================================
+
+.. currentmodule:: pyapacheatlas.core.whatif
+
+.. automethod:: WhatIfValidator.entity_would_overwrite

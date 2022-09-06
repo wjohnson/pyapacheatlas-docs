@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.msgraph.MsGraphClient.email\_to\_id
+======================================================
+
+.. currentmodule:: pyapacheatlas.core.msgraph
+
+.. automethod:: MsGraphClient.email_to_id

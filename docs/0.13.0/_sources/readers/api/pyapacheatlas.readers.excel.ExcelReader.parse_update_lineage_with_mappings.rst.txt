@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.excel.ExcelReader.parse\_update\_lineage\_with\_mappings
+==============================================================================
+
+.. currentmodule:: pyapacheatlas.readers.excel
+
+.. automethod:: ExcelReader.parse_update_lineage_with_mappings

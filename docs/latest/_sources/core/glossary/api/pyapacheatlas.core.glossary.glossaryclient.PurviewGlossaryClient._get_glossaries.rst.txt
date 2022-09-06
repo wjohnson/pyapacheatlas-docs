@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.\_get\_glossaries
+==================================================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. automethod:: PurviewGlossaryClient._get_glossaries

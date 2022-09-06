@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.parse\_finegrain\_column\_lineage
+=====================================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.parse_finegrain_column_lineage

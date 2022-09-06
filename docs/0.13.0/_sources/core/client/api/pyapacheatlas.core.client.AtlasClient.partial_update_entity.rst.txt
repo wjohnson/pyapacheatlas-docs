@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.partial\_update\_entity
+=============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.partial_update_entity

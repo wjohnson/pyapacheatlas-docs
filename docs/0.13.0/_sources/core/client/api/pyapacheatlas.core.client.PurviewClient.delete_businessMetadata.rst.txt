@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.delete\_businessMetadata
+================================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.delete_businessMetadata

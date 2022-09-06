@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasProcess.merge
+============================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasProcess.merge

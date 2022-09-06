@@ -1,0 +1,23 @@
+﻿pyapacheatlas.core.typedef.BaseTypeDef
+======================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: BaseTypeDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BaseTypeDef.__init__
+      ~BaseTypeDef.to_json
+   
+   
+
+   
+   
+   

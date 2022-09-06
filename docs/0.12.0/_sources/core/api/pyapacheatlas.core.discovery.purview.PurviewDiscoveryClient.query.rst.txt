@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.query
+=================================================================
+
+.. currentmodule:: pyapacheatlas.core.discovery.purview
+
+.. automethod:: PurviewDiscoveryClient.query

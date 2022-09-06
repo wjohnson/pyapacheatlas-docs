@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.get\_entity\_classifications
+====================================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.get_entity_classifications

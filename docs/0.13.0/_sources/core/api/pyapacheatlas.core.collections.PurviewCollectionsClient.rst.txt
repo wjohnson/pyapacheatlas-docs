@@ -1,0 +1,28 @@
+﻿pyapacheatlas.core.collections.PurviewCollectionsClient
+=======================================================
+
+.. currentmodule:: pyapacheatlas.core.collections
+
+.. autoclass:: PurviewCollectionsClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PurviewCollectionsClient.__init__
+      ~PurviewCollectionsClient.create_or_update_collection
+      ~PurviewCollectionsClient.generate_request_headers
+      ~PurviewCollectionsClient.list_collections
+      ~PurviewCollectionsClient.move_entities
+      ~PurviewCollectionsClient.upload_entities
+      ~PurviewCollectionsClient.upload_single_entity
+   
+   
+
+   
+   
+   

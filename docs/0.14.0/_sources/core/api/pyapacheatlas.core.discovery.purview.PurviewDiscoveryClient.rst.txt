@@ -1,0 +1,28 @@
+﻿pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient
+===========================================================
+
+.. currentmodule:: pyapacheatlas.core.discovery.purview
+
+.. autoclass:: PurviewDiscoveryClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PurviewDiscoveryClient.__init__
+      ~PurviewDiscoveryClient.autocomplete
+      ~PurviewDiscoveryClient.browse
+      ~PurviewDiscoveryClient.generate_request_headers
+      ~PurviewDiscoveryClient.query
+      ~PurviewDiscoveryClient.search_entities
+      ~PurviewDiscoveryClient.suggest
+   
+   
+
+   
+   
+   

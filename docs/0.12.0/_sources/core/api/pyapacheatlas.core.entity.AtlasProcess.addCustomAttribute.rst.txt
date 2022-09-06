@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasProcess.addCustomAttribute
+=========================================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasProcess.addCustomAttribute

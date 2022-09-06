@@ -1,0 +1,22 @@
+﻿pyapacheatlas.core.util.AtlasUnInit
+===================================
+
+.. currentmodule:: pyapacheatlas.core.util
+
+.. autoclass:: AtlasUnInit
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasUnInit.__init__
+   
+   
+
+   
+   
+   

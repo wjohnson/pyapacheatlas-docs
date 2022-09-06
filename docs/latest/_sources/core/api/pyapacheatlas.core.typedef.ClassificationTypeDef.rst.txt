@@ -1,0 +1,30 @@
+﻿pyapacheatlas.core.typedef.ClassificationTypeDef
+================================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: ClassificationTypeDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ClassificationTypeDef.__init__
+      ~ClassificationTypeDef.addAttributeDef
+      ~ClassificationTypeDef.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ClassificationTypeDef.attributeDefs
+   
+   

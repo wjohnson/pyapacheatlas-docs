@@ -1,0 +1,23 @@
+﻿pyapacheatlas.core.typedef.AtlasRelationshipEndDef
+==================================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: AtlasRelationshipEndDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasRelationshipEndDef.__init__
+      ~AtlasRelationshipEndDef.to_json
+   
+   
+
+   
+   
+   

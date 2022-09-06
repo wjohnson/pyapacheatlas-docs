@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.util.PurviewLimitation
+=========================================
+
+.. currentmodule:: pyapacheatlas.core.util
+
+.. autofunction:: PurviewLimitation

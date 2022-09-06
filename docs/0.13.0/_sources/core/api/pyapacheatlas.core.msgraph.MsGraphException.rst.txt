@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.msgraph.MsGraphException
+===========================================
+
+.. currentmodule:: pyapacheatlas.core.msgraph
+
+.. autoexception:: MsGraphException

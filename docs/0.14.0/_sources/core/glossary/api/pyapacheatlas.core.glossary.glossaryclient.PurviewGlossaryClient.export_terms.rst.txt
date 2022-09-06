@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.export\_terms
+==============================================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. automethod:: PurviewGlossaryClient.export_terms

@@ -1,0 +1,22 @@
+﻿pyapacheatlas.readers.excel.ExcelConfiguration
+==============================================
+
+.. currentmodule:: pyapacheatlas.readers.excel
+
+.. autoclass:: ExcelConfiguration
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExcelConfiguration.__init__
+   
+   
+
+   
+   
+   

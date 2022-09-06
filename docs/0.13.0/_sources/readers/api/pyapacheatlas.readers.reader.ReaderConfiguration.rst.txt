@@ -1,0 +1,22 @@
+﻿pyapacheatlas.readers.reader.ReaderConfiguration
+================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. autoclass:: ReaderConfiguration
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ReaderConfiguration.__init__
+   
+   
+
+   
+   
+   

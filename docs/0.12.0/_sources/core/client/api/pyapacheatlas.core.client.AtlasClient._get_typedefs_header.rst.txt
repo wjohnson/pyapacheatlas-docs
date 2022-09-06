@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.\_get\_typedefs\_header
+=============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient._get_typedefs_header

@@ -1,0 +1,23 @@
+﻿pyapacheatlas.auth.base.AtlasAuthBase
+=====================================
+
+.. currentmodule:: pyapacheatlas.auth.base
+
+.. autoclass:: AtlasAuthBase
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasAuthBase.__init__
+      ~AtlasAuthBase.get_authentication_headers
+   
+   
+
+   
+   
+   

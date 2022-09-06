@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.parse\_column\_mapping
+==========================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.parse_column_mapping

@@ -1,0 +1,27 @@
+﻿pyapacheatlas.core.typedef.TypeCategory
+=======================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: TypeCategory
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TypeCategory.CLASSIFICATION
+      ~TypeCategory.ENTITY
+      ~TypeCategory.ENUM
+      ~TypeCategory.RELATIONSHIP
+      ~TypeCategory.STRUCT
+      ~TypeCategory.BUSINESSMETADATA
+   
+   

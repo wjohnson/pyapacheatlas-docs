@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.collections.PurviewCollectionsClient.create\_or\_update\_collection
+======================================================================================
+
+.. currentmodule:: pyapacheatlas.core.collections
+
+.. automethod:: PurviewCollectionsClient.create_or_update_collection

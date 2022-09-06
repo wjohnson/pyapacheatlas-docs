@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.core.client.PurviewClient.upload_relationship &#8212; PyApacheAtlas 0.13.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/nature.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PyApacheAtlas 0.13.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core.client.PurviewClient.upload_relationship</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pyapacheatlas-core-client-purviewclient-upload-relationship">
+<h1>pyapacheatlas.core.client.PurviewClient.upload_relationship<a class="headerlink" href="#pyapacheatlas-core-client-purviewclient-upload-relationship" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.client.PurviewClient.upload_relationship">
+<span class="sig-prename descclassname"><span class="pre">PurviewClient.</span></span><span class="sig-name descname"><span class="pre">upload_relationship</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relationship</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.client.PurviewClient.upload_relationship" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a AtlasRelationship json. Should take the form of the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;typeName&quot;</span><span class="p">:</span> <span class="s2">&quot;hive_table_columns&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;guid&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span>
+    <span class="s2">&quot;end1&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;guid&quot;</span><span class="p">:</span> <span class="n">assignments</span><span class="p">[</span><span class="s2">&quot;-1&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;end2&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;guid&quot;</span><span class="p">:</span> <span class="n">assignments</span><span class="p">[</span><span class="s2">&quot;-5&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>relationship</strong> (<em>dict</em>) – The relationship you want to upload.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The results of your relationship upload.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/core/client/api/pyapacheatlas.core.client.PurviewClient.upload_relationship.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PyApacheAtlas 0.13.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core.client.PurviewClient.upload_relationship</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

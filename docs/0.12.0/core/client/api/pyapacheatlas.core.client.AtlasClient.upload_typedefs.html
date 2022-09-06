@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.core.client.AtlasClient.upload_typedefs &#8212; PyApacheAtlas 0.12.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/nature.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PyApacheAtlas 0.12.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core.client.AtlasClient.upload_typedefs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pyapacheatlas-core-client-atlasclient-upload-typedefs">
+<h1>pyapacheatlas.core.client.AtlasClient.upload_typedefs<a class="headerlink" href="#pyapacheatlas-core-client-atlasclient-upload-typedefs" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.client.AtlasClient.upload_typedefs">
+<span class="sig-prename descclassname"><span class="pre">AtlasClient.</span></span><span class="sig-name descname"><span class="pre">upload_typedefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typedefs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.client.AtlasClient.upload_typedefs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a way to upload a single or multiple type definitions.
+If you provide one type def, it will format the required wrapper
+for you based on the type category.</p>
+<p>If you want to upload multiple type defs or typedefs of different
+category, you can pass the in kwargs <cite>entityDefs</cite>, <cite>classificationDefs</cite>,
+<cite>enumDefs</cite>, <cite>relationshipDefs</cite>, <cite>structDefs</cite> which take in a list of
+dicts or appropriate TypeDef objects.</p>
+<p>Otherwise, you can pass in the wrapper yourself (e.g. {“entityDefs”:[],
+“relationshipDefs”:[]}) by providing that dict to the typedefs
+parameter. If the dict you pass in contains at least one of these Def
+fields it will be considered valid and an upload will be attempted.</p>
+<p>typedefs also takes in a BaseTypeDef object or a valid AtlasTypeDef
+json / dict. If you provide a value in typedefs, it will ignore the
+kwargs parameters.</p>
+<p>When using force_update, it will look up all existing types and see
+if any of your provided types exist.  If they do exist, they will be
+updated. If they do not exist, they will be issued as new. New types
+are uploaded first. Existing types are updated second. There are no
+transactional updates.  New types can succeed and be inserted while
+a batch of existing types can fail and not be updated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>typedefs</strong> (Union(dict, <a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>)) – The set of type definitions you want to upload.</p></li>
+<li><p><strong>force_update</strong> (<em>bool</em>) – Set to True if your typedefs contains any existing entities.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The results of your upload attempt from the Atlas server.
+:rtype: dict</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">param entityDefs</dt>
+<dd class="field-odd"><p>EntityDefs to upload.</p>
+</dd>
+<dt class="field-even">type entityDefs</dt>
+<dd class="field-even"><p>list( Union(<a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>, dict))</p>
+</dd>
+<dt class="field-odd">param classificationDefs</dt>
+<dd class="field-odd"><p>classificationDefs to upload.</p>
+</dd>
+<dt class="field-even">type classificationDefs</dt>
+<dd class="field-even"><p>list( Union(<a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>, dict))</p>
+</dd>
+<dt class="field-odd">param enumDefs</dt>
+<dd class="field-odd"><p>enumDefs to upload.</p>
+</dd>
+<dt class="field-even">type enumDefs</dt>
+<dd class="field-even"><p>list( Union(<a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>, dict))</p>
+</dd>
+<dt class="field-odd">param relationshipDefs</dt>
+<dd class="field-odd"><p>relationshipDefs to upload.</p>
+</dd>
+<dt class="field-even">type relationshipDefs</dt>
+<dd class="field-even"><p>list( Union(<a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>, dict))</p>
+</dd>
+<dt class="field-odd">param structDefs</dt>
+<dd class="field-odd"><p>structDefs to upload.</p>
+</dd>
+<dt class="field-even">type structDefs</dt>
+<dd class="field-even"><p>list( Union(<a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>, dict))</p>
+</dd>
+<dt class="field-odd">param businessMetadataDefs</dt>
+<dd class="field-odd"><p>businessMetadataDefs to upload.</p>
+</dd>
+<dt class="field-even">type businessMetadataDefs</dt>
+<dd class="field-even"><p>list( Union(<a class="reference internal" href="../../../pyapacheatlas.core.html#pyapacheatlas.core.typedef.BaseTypeDef" title="pyapacheatlas.core.typedef.BaseTypeDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTypeDef</span></code></a>, dict))</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/core/client/api/pyapacheatlas.core.client.AtlasClient.upload_typedefs.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PyApacheAtlas 0.12.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core.client.AtlasClient.upload_typedefs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

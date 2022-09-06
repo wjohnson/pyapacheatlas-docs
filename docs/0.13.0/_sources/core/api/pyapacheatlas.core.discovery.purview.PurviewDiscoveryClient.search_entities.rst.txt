@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.search\_entities
+============================================================================
+
+.. currentmodule:: pyapacheatlas.core.discovery.purview
+
+.. automethod:: PurviewDiscoveryClient.search_entities

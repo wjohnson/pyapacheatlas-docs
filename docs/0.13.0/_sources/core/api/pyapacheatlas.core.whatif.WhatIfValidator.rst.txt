@@ -1,0 +1,35 @@
+﻿pyapacheatlas.core.whatif.WhatIfValidator
+=========================================
+
+.. currentmodule:: pyapacheatlas.core.whatif
+
+.. autoclass:: WhatIfValidator
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~WhatIfValidator.__init__
+      ~WhatIfValidator.entity_has_invalid_attributes
+      ~WhatIfValidator.entity_missing_attributes
+      ~WhatIfValidator.entity_type_exists
+      ~WhatIfValidator.entity_would_overwrite
+      ~WhatIfValidator.validate_entities
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~WhatIfValidator.ASSET_ATTRIBUTES
+      ~WhatIfValidator.ATLAS_MODEL
+      ~WhatIfValidator.REFERENCABLE_ATTRIBUTES
+   
+   

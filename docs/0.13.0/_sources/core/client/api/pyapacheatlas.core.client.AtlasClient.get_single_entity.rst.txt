@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.get\_single\_entity
+=========================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.get_single_entity

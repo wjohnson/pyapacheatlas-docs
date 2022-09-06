@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.update\_businessMetadata
+==============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.update_businessMetadata

@@ -1,0 +1,1276 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term &#8212; PyApacheAtlas 0.14.0 documentation</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'core/glossary/api/pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms.html" />
+    <link rel="prev" title="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_assignedTerm" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_assignedTerm.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fas fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">PyApacheAtlas 0.14.0 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../../index.html">
+                        Core
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../readers/index.html">
+                        Template Readers
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../auth/index.html">
+                        Authentication
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+  <i class="fas fa-search"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+  <i class="fas fa-search"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fas fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../../index.html">
+                        Core
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../readers/index.html">
+                        Template Readers
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../auth/index.html">
+                        Authentication
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Atlas and Microsoft Purview:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../client/index.html">
+   Clients for PyApacheAtlas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../client/atlasclient.html">
+     AtlasClient for Apache Atlas
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label class="toctree-toggle" for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.html">
+       pyapacheatlas.core.client.AtlasClient
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_entity.html">
+       pyapacheatlas.core.client.AtlasClient.get_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_single_entity.html">
+       pyapacheatlas.core.client.AtlasClient.get_single_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_entity_header.html">
+       pyapacheatlas.core.client.AtlasClient.get_entity_header
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.upload_entities.html">
+       pyapacheatlas.core.client.AtlasClient.upload_entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.partial_update_entity.html">
+       pyapacheatlas.core.client.AtlasClient.partial_update_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_entity.html">
+       pyapacheatlas.core.client.AtlasClient.delete_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_relationship.html">
+       pyapacheatlas.core.client.AtlasClient.get_relationship
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.upload_relationship.html">
+       pyapacheatlas.core.client.AtlasClient.upload_relationship
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_relationship.html">
+       pyapacheatlas.core.client.AtlasClient.delete_relationship
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_all_typedefs.html">
+       pyapacheatlas.core.client.AtlasClient.get_all_typedefs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_typedef.html">
+       pyapacheatlas.core.client.AtlasClient.get_typedef
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.upload_typedefs.html">
+       pyapacheatlas.core.client.AtlasClient.upload_typedefs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_type.html">
+       pyapacheatlas.core.client.AtlasClient.delete_type
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_typedefs.html">
+       pyapacheatlas.core.client.AtlasClient.delete_typedefs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient._get_typedefs_header.html">
+       pyapacheatlas.core.client.AtlasClient._get_typedefs_header
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_entity_classification.html">
+       pyapacheatlas.core.client.AtlasClient.get_entity_classification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_entity_classifications.html">
+       pyapacheatlas.core.client.AtlasClient.get_entity_classifications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.classify_bulk_entities.html">
+       pyapacheatlas.core.client.AtlasClient.classify_bulk_entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.classify_entity.html">
+       pyapacheatlas.core.client.AtlasClient.classify_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient._classify_entity_adds.html">
+       pyapacheatlas.core.client.AtlasClient._classify_entity_adds
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient._classify_entity_updates.html">
+       pyapacheatlas.core.client.AtlasClient._classify_entity_updates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.declassify_entity.html">
+       pyapacheatlas.core.client.AtlasClient.declassify_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.update_businessMetadata.html">
+       pyapacheatlas.core.client.AtlasClient.update_businessMetadata
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_businessMetadata.html">
+       pyapacheatlas.core.client.AtlasClient.delete_businessMetadata
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_entity_lineage.html">
+       pyapacheatlas.core.client.AtlasClient.get_entity_lineage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_glossary.html">
+       pyapacheatlas.core.client.AtlasClient.get_glossary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_glossary_term.html">
+       pyapacheatlas.core.client.AtlasClient.get_glossary_term
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.upload_terms.html">
+       pyapacheatlas.core.client.AtlasClient.upload_terms
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.get_termAssignedEntities.html">
+       pyapacheatlas.core.client.AtlasClient.get_termAssignedEntities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.assignTerm.html">
+       pyapacheatlas.core.client.AtlasClient.assignTerm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_assignedTerm.html">
+       pyapacheatlas.core.client.AtlasClient.delete_assignedTerm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.update_entity_labels.html">
+       pyapacheatlas.core.client.AtlasClient.update_entity_labels
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.AtlasClient.delete_entity_labels.html">
+       pyapacheatlas.core.client.AtlasClient.delete_entity_labels
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../client/purviewclient.html">
+     PurviewClient for Microsoft Purview
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label class="toctree-toggle" for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.html">
+       pyapacheatlas.core.client.PurviewClient
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_entity.html">
+       pyapacheatlas.core.client.PurviewClient.get_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_single_entity.html">
+       pyapacheatlas.core.client.PurviewClient.get_single_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_entity_header.html">
+       pyapacheatlas.core.client.PurviewClient.get_entity_header
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.upload_entities.html">
+       pyapacheatlas.core.client.PurviewClient.upload_entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.partial_update_entity.html">
+       pyapacheatlas.core.client.PurviewClient.partial_update_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.delete_entity.html">
+       pyapacheatlas.core.client.PurviewClient.delete_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_all_typedefs.html">
+       pyapacheatlas.core.client.PurviewClient.get_all_typedefs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_typedef.html">
+       pyapacheatlas.core.client.PurviewClient.get_typedef
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.upload_typedefs.html">
+       pyapacheatlas.core.client.PurviewClient.upload_typedefs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.delete_type.html">
+       pyapacheatlas.core.client.PurviewClient.delete_type
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.delete_typedefs.html">
+       pyapacheatlas.core.client.PurviewClient.delete_typedefs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient._get_typedefs_header.html">
+       pyapacheatlas.core.client.PurviewClient._get_typedefs_header
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_entity_classification.html">
+       pyapacheatlas.core.client.PurviewClient.get_entity_classification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_entity_classifications.html">
+       pyapacheatlas.core.client.PurviewClient.get_entity_classifications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.classify_bulk_entities.html">
+       pyapacheatlas.core.client.PurviewClient.classify_bulk_entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.classify_entity.html">
+       pyapacheatlas.core.client.PurviewClient.classify_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient._classify_entity_adds.html">
+       pyapacheatlas.core.client.PurviewClient._classify_entity_adds
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient._classify_entity_updates.html">
+       pyapacheatlas.core.client.PurviewClient._classify_entity_updates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.declassify_entity.html">
+       pyapacheatlas.core.client.PurviewClient.declassify_entity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.update_businessMetadata.html">
+       pyapacheatlas.core.client.PurviewClient.update_businessMetadata
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.delete_businessMetadata.html">
+       pyapacheatlas.core.client.PurviewClient.delete_businessMetadata
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_entity_lineage.html">
+       pyapacheatlas.core.client.PurviewClient.get_entity_lineage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_entity_next_lineage.html">
+       pyapacheatlas.core.client.PurviewClient.get_entity_next_lineage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.get_relationship.html">
+       pyapacheatlas.core.client.PurviewClient.get_relationship
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.upload_relationship.html">
+       pyapacheatlas.core.client.PurviewClient.upload_relationship
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.delete_relationship.html">
+       pyapacheatlas.core.client.PurviewClient.delete_relationship
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.update_entity_labels.html">
+       pyapacheatlas.core.client.PurviewClient.update_entity_labels
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../client/api/pyapacheatlas.core.client.PurviewClient.delete_entity_labels.html">
+       pyapacheatlas.core.client.PurviewClient.delete_entity_labels
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../entity.html">
+   Atlas Entity Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.html">
+     pyapacheatlas.core.entity.AtlasEntity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.addBusinessAttribute.html">
+     pyapacheatlas.core.entity.AtlasEntity.addBusinessAttribute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.addClassification.html">
+     pyapacheatlas.core.entity.AtlasEntity.addClassification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.addCustomAttribute.html">
+     pyapacheatlas.core.entity.AtlasEntity.addCustomAttribute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.addRelationship.html">
+     pyapacheatlas.core.entity.AtlasEntity.addRelationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.from_json.html">
+     pyapacheatlas.core.entity.AtlasEntity.from_json
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.merge.html">
+     pyapacheatlas.core.entity.AtlasEntity.merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasEntity.to_json.html">
+     pyapacheatlas.core.entity.AtlasEntity.to_json
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.html">
+     pyapacheatlas.core.entity.AtlasProcess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.addBusinessAttribute.html">
+     pyapacheatlas.core.entity.AtlasProcess.addBusinessAttribute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.addClassification.html">
+     pyapacheatlas.core.entity.AtlasProcess.addClassification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.addCustomAttribute.html">
+     pyapacheatlas.core.entity.AtlasProcess.addCustomAttribute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.addInput.html">
+     pyapacheatlas.core.entity.AtlasProcess.addInput
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.addOutput.html">
+     pyapacheatlas.core.entity.AtlasProcess.addOutput
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.addRelationship.html">
+     pyapacheatlas.core.entity.AtlasProcess.addRelationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.from_json.html">
+     pyapacheatlas.core.entity.AtlasProcess.from_json
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.merge.html">
+     pyapacheatlas.core.entity.AtlasProcess.merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasProcess.to_json.html">
+     pyapacheatlas.core.entity.AtlasProcess.to_json
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasClassification.html">
+     pyapacheatlas.core.entity.AtlasClassification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.entity.AtlasClassification.to_json.html">
+     pyapacheatlas.core.entity.AtlasClassification.to_json
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../typedef.html">
+   Atlas Type Definition Models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.EntityTypeDef.html">
+     pyapacheatlas.core.typedef.EntityTypeDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.ClassificationTypeDef.html">
+     pyapacheatlas.core.typedef.ClassificationTypeDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.RelationshipTypeDef.html">
+     pyapacheatlas.core.typedef.RelationshipTypeDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.Cardinality.html">
+     pyapacheatlas.core.typedef.Cardinality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.AtlasStructDef.html">
+     pyapacheatlas.core.typedef.AtlasStructDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.TypeCategory.html">
+     pyapacheatlas.core.typedef.TypeCategory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.BaseTypeDef.html">
+     pyapacheatlas.core.typedef.BaseTypeDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.AtlasAttributeDef.html">
+     pyapacheatlas.core.typedef.AtlasAttributeDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.AtlasRelationshipAttributeDef.html">
+     pyapacheatlas.core.typedef.AtlasRelationshipAttributeDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.AtlasRelationshipEndDef.html">
+     pyapacheatlas.core.typedef.AtlasRelationshipEndDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.ParentEndDef.html">
+     pyapacheatlas.core.typedef.ParentEndDef
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.typedef.ChildEndDef.html">
+     pyapacheatlas.core.typedef.ChildEndDef
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../discovery.html">
+   Atlas Discovery / Search Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.html">
+     pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.autocomplete.html">
+     pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.autocomplete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.browse.html">
+     pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.browse
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.query.html">
+     pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.query
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.suggest.html">
+     pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.suggest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.search_entities.html">
+     pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.search_entities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Atlas Glossary Methods
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get_glossary.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get_glossary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient._get_glossaries.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient._get_glossaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get_term.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get_term
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.upload_term.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.upload_term
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.upload_terms.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.upload_terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get_termAssignedEntities.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get_termAssignedEntities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.assignTerm.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.assignTerm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.delete_assignedTerm.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.delete_assignedTerm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.delete_term.html">
+     pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.delete_term
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get_glossary.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get_glossary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient._get_glossaries.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient._get_glossaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get_term.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get_term
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.upload_term.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.upload_term
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.upload_terms.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.upload_terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get_termAssignedEntities.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get_termAssignedEntities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.assignTerm.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.assignTerm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_assignedTerm.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_assignedTerm
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms_status.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms_status
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.export_terms.html">
+     pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.export_terms
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Microsoft Purview Specific
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../collections.html">
+   PurviewCollectionsClient
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.collections.PurviewCollectionsClient.html">
+     pyapacheatlas.core.collections.PurviewCollectionsClient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.collections.PurviewCollectionsClient.upload_single_entity.html">
+     pyapacheatlas.core.collections.PurviewCollectionsClient.upload_single_entity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.collections.PurviewCollectionsClient.upload_entities.html">
+     pyapacheatlas.core.collections.PurviewCollectionsClient.upload_entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.collections.PurviewCollectionsClient.move_entities.html">
+     pyapacheatlas.core.collections.PurviewCollectionsClient.move_entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.collections.PurviewCollectionsClient.list_collections.html">
+     pyapacheatlas.core.collections.PurviewCollectionsClient.list_collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.collections.PurviewCollectionsClient.create_or_update_collection.html">
+     pyapacheatlas.core.collections.PurviewCollectionsClient.create_or_update_collection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../msgraph.html">
+   Microsoft Graph Utilities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.msgraph.MsGraphClient.html">
+     pyapacheatlas.core.msgraph.MsGraphClient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.msgraph.MsGraphException.html">
+     pyapacheatlas.core.msgraph.MsGraphException
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.msgraph.MsGraphClient.upn_to_id.html">
+     pyapacheatlas.core.msgraph.MsGraphClient.upn_to_id
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.msgraph.MsGraphClient.email_to_id.html">
+     pyapacheatlas.core.msgraph.MsGraphClient.email_to_id
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Utilities
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../whatif.html">
+   What If Utility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.whatif.WhatIfValidator.html">
+     pyapacheatlas.core.whatif.WhatIfValidator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.whatif.WhatIfValidator.entity_type_exists.html">
+     pyapacheatlas.core.whatif.WhatIfValidator.entity_type_exists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.whatif.WhatIfValidator.entity_missing_attributes.html">
+     pyapacheatlas.core.whatif.WhatIfValidator.entity_missing_attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.whatif.WhatIfValidator.entity_has_invalid_attributes.html">
+     pyapacheatlas.core.whatif.WhatIfValidator.entity_has_invalid_attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.whatif.WhatIfValidator.entity_would_overwrite.html">
+     pyapacheatlas.core.whatif.WhatIfValidator.entity_would_overwrite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.whatif.WhatIfValidator.validate_entities.html">
+     pyapacheatlas.core.whatif.WhatIfValidator.validate_entities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../util.html">
+   General Utilities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.AtlasResponse.html">
+     pyapacheatlas.core.util.AtlasResponse
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.AtlasBaseClient.html">
+     pyapacheatlas.core.util.AtlasBaseClient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.AtlasException.html">
+     pyapacheatlas.core.util.AtlasException
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.AtlasUnInit.html">
+     pyapacheatlas.core.util.AtlasUnInit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.PurviewOnly.html">
+     pyapacheatlas.core.util.PurviewOnly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.PurviewLimitation.html">
+     pyapacheatlas.core.util.PurviewLimitation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.GuidTracker.html">
+     pyapacheatlas.core.util.GuidTracker
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../api/pyapacheatlas.core.util.GuidTracker.get_guid.html">
+     pyapacheatlas.core.util.GuidTracker.get_guid
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="pyapacheatlas-core-glossary-glossaryclient-purviewglossaryclient-delete-term">
+<h1>pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term<a class="headerlink" href="#pyapacheatlas-core-glossary-glossaryclient-purviewglossaryclient-delete-term" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term">
+<span class="sig-prename descclassname"><span class="pre">PurviewGlossaryClient.</span></span><span class="sig-name descname"><span class="pre">delete_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">termGuid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term" title="Permalink to this definition">#</a></dt>
+<dd><p>Delete a term based on the termGuid
+:param str termGuid: The guid for the term. Ignored if using termName.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary indicating success or failure.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_assignedTerm.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_assignedTerm</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.import_terms</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../../_sources/core/glossary/api/pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.delete_term.rst.txt">
+        <i class="fas fa-file-alt"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, Will Johnson.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

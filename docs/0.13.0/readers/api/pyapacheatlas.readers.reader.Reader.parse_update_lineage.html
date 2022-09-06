@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.readers.reader.Reader.parse_update_lineage &#8212; PyApacheAtlas 0.13.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyApacheAtlas 0.13.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.readers.reader.Reader.parse_update_lineage</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pyapacheatlas-readers-reader-reader-parse-update-lineage">
+<h1>pyapacheatlas.readers.reader.Reader.parse_update_lineage<a class="headerlink" href="#pyapacheatlas-readers-reader-reader-parse-update-lineage" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader.parse_update_lineage">
+<span class="sig-prename descclassname"><span class="pre">Reader.</span></span><span class="sig-name descname"><span class="pre">parse_update_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader.parse_update_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take in UpdateLineage dictionaries and create the mutated Process
+entities to be uploaded. All referenced entities must already exist
+and be identified by their type and qualifiedName.</p>
+<p>Assumes a None entry for target or source qualifiedNames means 
+“no change” to the existing entity. Using ‘N/A’ for the target or
+source qualifiedNames will reset the existing input or output to an
+empty list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts that contain the converted rows of your update
+lineage spreadsheet.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Processes as dictionaries representing the updated
+process entity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/readers/api/pyapacheatlas.readers.reader.Reader.parse_update_lineage.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyApacheAtlas 0.13.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.readers.reader.Reader.parse_update_lineage</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

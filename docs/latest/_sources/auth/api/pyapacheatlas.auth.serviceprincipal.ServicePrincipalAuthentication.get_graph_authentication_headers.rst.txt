@@ -1,0 +1,6 @@
+﻿pyapacheatlas.auth.serviceprincipal.ServicePrincipalAuthentication.get\_graph\_authentication\_headers
+======================================================================================================
+
+.. currentmodule:: pyapacheatlas.auth.serviceprincipal
+
+.. automethod:: ServicePrincipalAuthentication.get_graph_authentication_headers

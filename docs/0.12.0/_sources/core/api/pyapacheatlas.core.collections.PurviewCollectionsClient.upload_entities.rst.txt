@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.collections.PurviewCollectionsClient.upload\_entities
+========================================================================
+
+.. currentmodule:: pyapacheatlas.core.collections
+
+.. automethod:: PurviewCollectionsClient.upload_entities

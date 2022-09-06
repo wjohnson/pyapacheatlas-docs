@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.classify\_bulk\_entities
+================================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.classify_bulk_entities

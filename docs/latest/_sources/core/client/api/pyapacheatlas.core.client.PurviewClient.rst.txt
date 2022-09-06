@@ -1,0 +1,59 @@
+﻿pyapacheatlas.core.client.PurviewClient
+=======================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. autoclass:: PurviewClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PurviewClient.__init__
+      ~PurviewClient.assignTerm
+      ~PurviewClient.classify_bulk_entities
+      ~PurviewClient.classify_entity
+      ~PurviewClient.declassify_entity
+      ~PurviewClient.delete_assignedTerm
+      ~PurviewClient.delete_businessMetadata
+      ~PurviewClient.delete_entity
+      ~PurviewClient.delete_entity_labels
+      ~PurviewClient.delete_relationship
+      ~PurviewClient.delete_type
+      ~PurviewClient.delete_typedefs
+      ~PurviewClient.export_terms
+      ~PurviewClient.generate_request_headers
+      ~PurviewClient.get_all_typedefs
+      ~PurviewClient.get_entity
+      ~PurviewClient.get_entity_classification
+      ~PurviewClient.get_entity_classifications
+      ~PurviewClient.get_entity_header
+      ~PurviewClient.get_entity_lineage
+      ~PurviewClient.get_entity_next_lineage
+      ~PurviewClient.get_glossary
+      ~PurviewClient.get_glossary_term
+      ~PurviewClient.get_relationship
+      ~PurviewClient.get_single_entity
+      ~PurviewClient.get_termAssignedEntities
+      ~PurviewClient.get_typedef
+      ~PurviewClient.import_terms
+      ~PurviewClient.import_terms_status
+      ~PurviewClient.partial_update_entity
+      ~PurviewClient.search_entities
+      ~PurviewClient.update_businessMetadata
+      ~PurviewClient.update_entity_labels
+      ~PurviewClient.upload_entities
+      ~PurviewClient.upload_relationship
+      ~PurviewClient.upload_term
+      ~PurviewClient.upload_terms
+      ~PurviewClient.upload_typedefs
+   
+   
+
+   
+   
+   

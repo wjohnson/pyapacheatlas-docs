@@ -1,0 +1,24 @@
+﻿pyapacheatlas.core.msgraph.MsGraphClient
+========================================
+
+.. currentmodule:: pyapacheatlas.core.msgraph
+
+.. autoclass:: MsGraphClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MsGraphClient.__init__
+      ~MsGraphClient.email_to_id
+      ~MsGraphClient.upn_to_id
+   
+   
+
+   
+   
+   

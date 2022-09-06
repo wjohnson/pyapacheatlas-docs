@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.classify\_bulk\_entities
+==============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.classify_bulk_entities

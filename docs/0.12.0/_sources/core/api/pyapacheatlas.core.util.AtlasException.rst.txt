@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.util.AtlasException
+======================================
+
+.. currentmodule:: pyapacheatlas.core.util
+
+.. autoexception:: AtlasException

@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.get\_glossary\_term
+=========================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.get_glossary_term

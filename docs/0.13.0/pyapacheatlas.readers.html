@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.readers package &#8212; PyApacheAtlas 0.13.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyapacheatlas.scaffolding package" href="pyapacheatlas.scaffolding.html" />
+    <link rel="prev" title="pyapacheatlas.core package" href="pyapacheatlas.core.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.scaffolding.html" title="pyapacheatlas.scaffolding package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.core.html" title="pyapacheatlas.core package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.13.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" accesskey="U">pyapacheatlas package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.readers package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pyapacheatlas-readers-package">
+<h1>pyapacheatlas.readers package<a class="headerlink" href="#pyapacheatlas-readers-package" title="Permalink to this headline">¶</a></h1>
+<section id="module-pyapacheatlas.readers.reader">
+<span id="pyapacheatlas-readers-reader-module"></span><h2>pyapacheatlas.readers.reader module<a class="headerlink" href="#module-pyapacheatlas.readers.reader" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.reader.</span></span><span class="sig-name descname"><span class="pre">Reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyapacheatlas.readers.lineagemixin.LineageMixIn" title="pyapacheatlas.readers.lineagemixin.LineageMixIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.readers.lineagemixin.LineageMixIn</span></code></a></p>
+<p>The base Reader with functionality that supports python dicts.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader.TEMPLATE_HEADERS">
+<span class="sig-name descname"><span class="pre">TEMPLATE_HEADERS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'BulkEntities':</span> <span class="pre">['typeName',</span> <span class="pre">'name',</span> <span class="pre">'qualifiedName'],</span> <span class="pre">'ClassificationDefs':</span> <span class="pre">['classificationName',</span> <span class="pre">'entityTypes',</span> <span class="pre">'description'],</span> <span class="pre">'ColumnMapping':</span> <span class="pre">['Source</span> <span class="pre">qualifiedName',</span> <span class="pre">'Source</span> <span class="pre">column',</span> <span class="pre">'Target</span> <span class="pre">qualifiedName',</span> <span class="pre">'Target</span> <span class="pre">column',</span> <span class="pre">'Process</span> <span class="pre">qualifiedName',</span> <span class="pre">'Process</span> <span class="pre">typeName',</span> <span class="pre">'Process</span> <span class="pre">name'],</span> <span class="pre">'EntityDefs':</span> <span class="pre">['Entity</span> <span class="pre">TypeName',</span> <span class="pre">'name',</span> <span class="pre">'description',</span> <span class="pre">'isOptional',</span> <span class="pre">'isUnique',</span> <span class="pre">'defaultValue',</span> <span class="pre">'typeName',</span> <span class="pre">'displayName',</span> <span class="pre">'valuesMinCount',</span> <span class="pre">'valuesMaxCount',</span> <span class="pre">'cardinality',</span> <span class="pre">'includeInNotification',</span> <span class="pre">'indexType',</span> <span class="pre">'isIndexable'],</span> <span class="pre">'FineGrainColumnLineage':</span> <span class="pre">['Target</span> <span class="pre">table',</span> <span class="pre">'Target</span> <span class="pre">column',</span> <span class="pre">'Target</span> <span class="pre">classifications',</span> <span class="pre">'Source</span> <span class="pre">table',</span> <span class="pre">'Source</span> <span class="pre">column',</span> <span class="pre">'Source</span> <span class="pre">classifications',</span> <span class="pre">'transformation'],</span> <span class="pre">'TablesLineage':</span> <span class="pre">['Target</span> <span class="pre">table',</span> <span class="pre">'Target</span> <span class="pre">type',</span> <span class="pre">'Target</span> <span class="pre">classifications',</span> <span class="pre">'Source</span> <span class="pre">table',</span> <span class="pre">'Source</span> <span class="pre">type',</span> <span class="pre">'Source</span> <span class="pre">classifications',</span> <span class="pre">'Process</span> <span class="pre">name',</span> <span class="pre">'Process</span> <span class="pre">type'],</span> <span class="pre">'UpdateLineage':</span> <span class="pre">['Target</span> <span class="pre">typeName',</span> <span class="pre">'Target</span> <span class="pre">qualifiedName',</span> <span class="pre">'Source</span> <span class="pre">typeName',</span> <span class="pre">'Source</span> <span class="pre">qualifiedName',</span> <span class="pre">'Process</span> <span class="pre">name',</span> <span class="pre">'Process</span> <span class="pre">qualifiedName',</span> <span class="pre">'Process</span> <span class="pre">typeName']}</span></em><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader.TEMPLATE_HEADERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader.make_template">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">make_template</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader.make_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a template for the given reader.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader.parse_bulk_entities">
+<span class="sig-name descname"><span class="pre">parse_bulk_entities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contacts_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader.parse_bulk_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AtlasEntityWithExtInfo consisting of entities and their attributes
+for the given json_rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>object</em><em>)</em><em>)</em>) – A list of dicts containing at least <cite>typeName</cite>, <cite>name</cite>, and <cite>qualifiedName</cite>
+that represents the entity to be uploaded.</p></li>
+<li><p><strong>contacts_func</strong> (<em>function</em>) – For Azure Purview, a function to be called on each value
+when you pass in an experts or owners header to json_rows.
+Leaving it as None will return the exact value passed in
+to the experts and owners section. 
+It has a built in cache that will prevent redundant calls
+to your function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An AtlasEntityWithExtInfo with entities for the provided rows.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, list(dict))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader.parse_classification_defs">
+<span class="sig-name descname"><span class="pre">parse_classification_defs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader.parse_classification_defs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AtlasTypeDef consisting of classificationDefs for the
+given json_rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts containing at least <cite>classificationName</cite>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An AtlasTypeDef with classificationDefs for the provided rows.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, list(dict))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.Reader.parse_entity_defs">
+<span class="sig-name descname"><span class="pre">parse_entity_defs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.Reader.parse_entity_defs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an AtlasTypeDef consisting of entityDefs for the
+given json_rows.  The columns <cite>Entity TypeName</cite> and <cite>Entity superTypes</cite>
+are special and map to typeName and superTypes respectively.</p>
+<p>Entity TypeName must be repeated for each row that has a relevant
+attribute being defined on it. For example, if you plan on including
+five attributes for type X, you would need to have five rows and
+each row would have to fill in the Entity TypeName column.</p>
+<p>superTypes can be specified all in one cell (default delimiter is <cite>;</cite>
+and is controlled by the Reader’s configuration) or across multiple
+cells. If you specify DataSet in one row for type X and hive_table
+for type X in a second row, it will result in a superType
+of <cite>[DataSet, hive_table]</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts containing at least <cite>Entity TypeName</cite> and <cite>name</cite>
+that represents the metadata for a given entity type’s
+attributeDefs. Extra metadata will be ignored.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An AtlasTypeDef with entityDefs for the provided rows.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, list(dict))</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.reader.ReaderConfiguration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.reader.</span></span><span class="sig-name descname"><span class="pre">ReaderConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.reader.ReaderConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A base configuration for the Reader class.  Allows you to customize
+headers with a source_prefix, target_prefix, and process_prefix for
+parsing table and column lineages.</p>
+</dd></dl>
+
+</section>
+<section id="module-pyapacheatlas.readers.lineagemixin">
+<span id="pyapacheatlas-readers-lineagemixin-module"></span><h2>pyapacheatlas.readers.lineagemixin module<a class="headerlink" href="#module-pyapacheatlas.readers.lineagemixin" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.lineagemixin.LineageMixIn">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.lineagemixin.</span></span><span class="sig-name descname"><span class="pre">LineageMixIn</span></span><a class="headerlink" href="#pyapacheatlas.readers.lineagemixin.LineageMixIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A MixIn to support the <a class="reference internal" href="readers/api/pyapacheatlas.readers.reader.Reader.html#pyapacheatlas.readers.reader.Reader" title="pyapacheatlas.readers.reader.Reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reader</span></code></a> with
+the table and column level lineages.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_column_mapping">
+<span class="sig-name descname"><span class="pre">parse_column_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_column_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take in ColumnMapping dictionaries and create the mutated Process
+entities to be uploaded. All referenced entities should already exist
+and be identified by their type and qualifiedName.</p>
+<p>Creates process entities with only the columnMapping field filled in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts that contain the converted rows of your update
+lineage spreadsheet.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An AtlasTypeDef with entityDefs for the provided rows.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, list(dict))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_finegrain_column_lineage">
+<span class="sig-name descname"><span class="pre">parse_finegrain_column_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_typedefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_column_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_finegrain_column_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts that contain the converted rows of your column
+spreadsheet.</p></li>
+<li><p><strong>atlas_entities</strong> (list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)) – A list of <a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>
+containing the referred entities.</p></li>
+<li><p><strong>atlas_typedefs</strong> (<em>dict</em><em>(</em><em>str</em><em>,</em><em>list</em><em>(</em><em>dict</em><em>)</em><em>)</em>) – The results of requesting all type defs from Apache Atlas,
+including entityDefs, relationshipDefs, etc.  relationshipDefs
+are the only values used.</p></li>
+<li><p><strong>use_column_mapping</strong> (<em>bool</em>) – Should the table processes include the columnMappings attribute
+that represents Column Lineage in Azure Data Catalog.
+Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of atlas entities that represent your column source, target,
+and column lineage processes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_table_lineage">
+<span class="sig-name descname"><span class="pre">parse_table_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_table_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the “tables” information into Atlas Entities for Target,
+Source, and Process types.  Currently only support one target from
+one source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts that contain the converted tables of your column
+spreadsheet.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of atlas entities that represent your source, target,
+and table processes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_update_lineage">
+<span class="sig-name descname"><span class="pre">parse_update_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_rows</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.lineagemixin.LineageMixIn.parse_update_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take in UpdateLineage dictionaries and create the mutated Process
+entities to be uploaded. All referenced entities must already exist
+and be identified by their type and qualifiedName.</p>
+<p>Assumes a None entry for target or source qualifiedNames means 
+“no change” to the existing entity. Using ‘N/A’ for the target or
+source qualifiedNames will reset the existing input or output to an
+empty list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_rows</strong> (<em>list</em><em>(</em><em>dict</em><em>(</em><em>str</em><em>,</em><em>str</em><em>)</em><em>)</em>) – A list of dicts that contain the converted rows of your update
+lineage spreadsheet.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Processes as dictionaries representing the updated
+process entity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pyapacheatlas.readers.excel">
+<span id="pyapacheatlas-readers-excel-module"></span><h2>pyapacheatlas.readers.excel module<a class="headerlink" href="#module-pyapacheatlas.readers.excel" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelConfiguration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.excel.</span></span><span class="sig-name descname"><span class="pre">ExcelConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FineGrainColumnLineage'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TablesLineage'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entityDef_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EntityDefs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bulkEntity_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'BulkEntities'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classificationDef_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ClassificationDefs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updateLineage_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'UpdateLineage'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columnMapping_sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ColumnMapping'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="readers/api/pyapacheatlas.readers.reader.ReaderConfiguration.html#pyapacheatlas.readers.reader.ReaderConfiguration" title="pyapacheatlas.readers.reader.ReaderConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.readers.reader.ReaderConfiguration</span></code></a></p>
+<p>A configuration utility to understand how your Excel file is structured.</p>
+<p>You must have a “Columns” and “Tables” sheet.  The name is configurable
+with the column_sheet and table_sheet properties.</p>
+<p>The Columns sheet must contain a “Source/Target” Column and Table header.
+Optionally, a Classifications column can be provided for each
+Source/Target.</p>
+<p>The Tables sheet must contain a “Source/Target” Table and Type along with
+a Process Name and Process Type.  The Process is related to the mechanism
+by which source becomes the target (e.g. a Stored Procedure or Query).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bulkEntity_sheet</strong> (<em>str</em>) – Defaults to “BulkEntities”</p></li>
+<li><p><strong>updateLineage_sheet</strong> (<em>str</em>) – Defaults to “UpdateLineage”</p></li>
+<li><p><strong>columnMapping_sheet</strong> (<em>str</em>) – Defaults to “ColumnMapping”</p></li>
+<li><p><strong>entityDef_sheet</strong> (<em>str</em>) – Defaults to “EntityDefs”</p></li>
+<li><p><strong>classificationDef_sheet</strong> (<em>str</em>) – Defaults to “ClassificationDefs”</p></li>
+<li><p><strong>table_sheet</strong> (<em>str</em>) – Defaults to “TablesLineage”</p></li>
+<li><p><strong>column_sheet</strong> (<em>str</em>) – Defaults to “FineGrainColumnLineage”</p></li>
+<li><p><strong>source_prefix</strong> (<em>str</em>) – Defaults to “Source” and represents the prefix of the columns
+in Excel to be considered related to the source table or column.</p></li>
+<li><p><strong>target_prefix</strong> (<em>str</em>) – Defaults to “Target” and represents the prefix of the columns
+in Excel to be considered related to the target table or column.</p></li>
+<li><p><strong>process_prefix</strong> (<em>str</em>) – Defaults to “Process” and represents the prefix of the columns
+in Excel to be considered related to the table process.</p></li>
+<li><p><strong>column_transformation_name</strong> (<em>str</em>) – Defaults to “transformation” and identifies the column that
+represents the transformation for a specific column.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.excel.</span></span><span class="sig-name descname"><span class="pre">ExcelReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="readers/api/pyapacheatlas.readers.reader.Reader.html#pyapacheatlas.readers.reader.Reader" title="pyapacheatlas.readers.reader.Reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyapacheatlas.readers.reader.Reader</span></code></a></p>
+<p>Read in Excel files that follow the excel template tab structure.
+Expects an <a class="reference internal" href="readers/api/pyapacheatlas.readers.excel.ExcelConfiguration.html#pyapacheatlas.readers.excel.ExcelConfiguration" title="pyapacheatlas.readers.excel.ExcelConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code></a> object
+to determine the naming conventions of tabs and headers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.make_template">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">make_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.make_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an Excel template file and write it out to the given filepath.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – The file path to store an XLSX file with the
+template Tables and Columns sheets.</p></li>
+<li><p><strong>bulkEntity_sheet</strong> (<em>str</em>) – Defaults to “BulkEntities”</p></li>
+<li><p><strong>updateLineage_sheet</strong> (<em>str</em>) – Defaults to “UpdateLineage”</p></li>
+<li><p><strong>columnMapping_sheet</strong> (<em>str</em>) – Defaults to “ColumnMapping”</p></li>
+<li><p><strong>entityDef_sheet</strong> (<em>str</em>) – Defaults to “EntityDefs”</p></li>
+<li><p><strong>classificationDef_sheet</strong> (<em>str</em>) – Defaults to “ClassificationDefs”</p></li>
+<li><p><strong>include_deprecated</strong> (<em>bool</em>) – Set to True if you want to include tabs that have been deprecated.
+For this release, it includes TablesLineage and
+FineGrainColumnLineage.</p></li>
+<li><p><strong>table_sheet</strong> (<em>str</em>) – Defaults to “TablesLineage”</p></li>
+<li><p><strong>column_sheet</strong> (<em>str</em>) – Defaults to “FineGrainColumnLineage”</p></li>
+<li><p><strong>source_prefix</strong> (<em>str</em>) – Defaults to “Source” and represents the prefix of the columns
+in Excel to be considered related to the source table or column.</p></li>
+<li><p><strong>target_prefix</strong> (<em>str</em>) – Defaults to “Target” and represents the prefix of the columns
+in Excel to be considered related to the target table or column.</p></li>
+<li><p><strong>process_prefix</strong> (<em>str</em>) – Defaults to “Process” and represents the prefix of the columns
+in Excel to be considered related to the table process.</p></li>
+<li><p><strong>column_transformation_name</strong> (<em>str</em>) – Defaults to “transformation” and identifies the column that
+represents the transformation for a specific column.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_bulk_entities">
+<span class="sig-name descname"><span class="pre">parse_bulk_entities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contacts_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_bulk_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a set of entities from an excel template file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p></li>
+<li><p><strong>contacts_func</strong> (<em>function</em>) – For Azure Purview, a function to be called on each value
+when you pass in an experts or owners header to json_rows.
+Leaving it as None will return the exact value passed in
+to the experts and owners section.
+It has a built in cache that will prevent redundant calls
+to your function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An AtlasTypeDef with entityDefs for the provided rows.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, list(dict))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_classification_defs">
+<span class="sig-name descname"><span class="pre">parse_classification_defs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_classification_defs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the (default) ClassificationDefs tab into classifications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A  entities representing the spreadsheet’s
+contents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_column_mapping">
+<span class="sig-name descname"><span class="pre">parse_column_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_column_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the (default) ColumnMapping tab into existing process entities.</p>
+<p>Assumes these process entities and any referenced entity exists.
+This will not update the inputs and outputs, it will update name
+and columnMapping fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Process entities representing the spreadsheet’s
+contents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_entity_defs">
+<span class="sig-name descname"><span class="pre">parse_entity_defs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_entity_defs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the type def tab(s) into a set of entity defs that can be
+uploaded.</p>
+<p>Currently, only entityDefs are supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An AtlasTypeDef with entityDefs for the provided rows.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, list(dict))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_finegrain_column_lineage">
+<span class="sig-name descname"><span class="pre">parse_finegrain_column_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_typedefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_column_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_finegrain_column_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the columns into column lineages.
+Requires that the relationship attributes are already defined in the
+provided atlas type defs.</p>
+<p>Infers column type from the target table type and an assumed “columns”
+relationship attribute on the table type.</p>
+<p>Infers the column lineage process based on the provided table process
+(provided in the template’s table excel sheet).  Looks for the first
+relationship type def with an endDef2 of <cite>columnLineages</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p></li>
+<li><p><strong>atlas_entities</strong> (<em>list</em><em>(</em><em>)</em>) – A list of AtlasEntity objects representing</p></li>
+<li><p><strong>atlas_typedefs</strong> (<em>dict</em><em>(</em><em>str</em><em>,</em><em>list</em><em>(</em><em>dict</em><em>)</em><em>)</em>) – The results of requesting all type defs from Apache Atlas,
+including entityDefs, relationshipDefs, etc.  relationshipDefs
+are the only values used.</p></li>
+<li><p><strong>use_column_mapping</strong> (<em>bool</em>) – Should the table processes include the columnMappings attribute
+that represents Column Lineage in Azure Data Catalog.
+Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Entities representing the spreadsheet’s
+inputs as their json dicts.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_table_finegrain_column_lineages">
+<span class="sig-name descname"><span class="pre">parse_table_finegrain_column_lineages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_typedefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_column_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_table_finegrain_column_lineages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the tables, processes, and columns into table and column
+lineages. Requires that the relationship attributes are already
+defined in the provided atlas type defs.</p>
+<p>Infers column type from the target table type and an assumed “columns”
+relationship attribute on the table type.</p>
+<p>Infers the column lineage process based on the provided table process
+(provided in the template’s table excel sheet).  Looks for the first
+relationship type def with an endDef2 of <cite>columnLineages</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p></li>
+<li><p><strong>atlas_typedefs</strong> (<em>dict</em><em>(</em><em>str</em><em>,</em><em>list</em><em>(</em><em>dict</em><em>)</em><em>)</em>) – The results of requesting all type defs from Apache Atlas,
+including entityDefs, relationshipDefs, etc.  relationshipDefs are
+the only values used.</p></li>
+<li><p><strong>use_column_mapping</strong> (<em>bool</em>) – Should the table processes include the columnMappings attribute
+that represents Column Lineage in Azure Data Catalog.
+Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Entities representing the spreadsheet’s inputs
+as their json dicts.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_table_lineage">
+<span class="sig-name descname"><span class="pre">parse_table_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_table_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the tables and processes table lineages.
+Requires that the relationship attributes are already defined in the
+provided atlas type defs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Entities representing the spreadsheet’s inputs
+as their json dicts.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage">
+<span class="sig-name descname"><span class="pre">parse_update_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the (default) UpdateLineage table into existing process entities.</p>
+<p>Assumes these process entities and any referenced entity exists.</p>
+<p>Leave the qualifiedName cell blank on source or target to leave the
+existing input or output (respectively) unchanged.</p>
+<p>Use ‘N/A’ in the qualifiedName on source or target to ‘destroy’ the
+existing input or output and overwrite with an empty list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Process entities representing the spreadsheet’s
+contents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage_with_mappings">
+<span class="sig-name descname"><span class="pre">parse_update_lineage_with_mappings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage_with_mappings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given excel file that conforms to the excel atlas template and
+parse the (default) UpdateLineage and ColumnMapping tabs into existing process entities.</p>
+<p>Assumes these process entities and any referenced entity exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – The xlsx file that contains your table and columns.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of Atlas Process entities representing the spreadsheet’s
+contents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pyapacheatlas.readers.util">
+<span id="pyapacheatlas-readers-util-module"></span><h2>pyapacheatlas.readers.util module<a class="headerlink" href="#module-pyapacheatlas.readers.util" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.util.columns_matching_pattern">
+<span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.util.</span></span><span class="sig-name descname"><span class="pre">columns_matching_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starts_with</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">does_not_match</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.util.columns_matching_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in a json “row” and filters the keys to match the <cite>starts_with</cite>
+parameter.  In addition, it will remove any match that is included
+in the <cite>does_not_match</cite> parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>dict</em>) – A dictionary with string keys to be filtered.</p></li>
+<li><p><strong>starts_with</strong> (<em>str</em>) – The required substring that all filtered results must start with.</p></li>
+<li><p><strong>does_not_match</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – A list of key values that should be omitted from the results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary that contains only the filtered results.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.util.first_entity_matching_attribute">
+<span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.util.</span></span><span class="sig-name descname"><span class="pre">first_entity_matching_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_entities</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.util.first_entity_matching_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first entity in a list that matches the passed in attribute
+and value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attribute</strong> (<em>str</em>) – The name of the attribute to search on each
+atlas entity.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The value of the attribute to search on each
+atlas entity.</p></li>
+<li><p><strong>atlas_entities</strong> (list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)) – The list of atlas entities to search over.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – A matching entity was not found in the provided entities.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The atlas entity that maches the attribute and value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.util.first_process_containing_io">
+<span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.util.</span></span><span class="sig-name descname"><span class="pre">first_process_containing_io</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_entities</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.util.first_process_containing_io" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first entity in a list that contains the inputs and outputs.
+If input_name and output_name are the only or one of the many inputs and
+outputs (respectively), it will count as a match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> (<em>str</em>) – The qualified name of an atlas entity or a ‘*’ wildcard
+that matches to any input (empty list or filled in values)</p></li>
+<li><p><strong>outputs</strong> (<em>str</em>) – The qualified name of an atlas entity.</p></li>
+<li><p><strong>atlas_entities</strong> (list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)) – The list of atlas entities to search over.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – A matching entity was not found in the provided entities.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The atlas entity that maches.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.util.first_relationship_that_matches">
+<span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.util.</span></span><span class="sig-name descname"><span class="pre">first_relationship_that_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end_def</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_def_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_def_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relationship_typedefs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.util.first_relationship_that_matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the first relationship type that matches the end_def number, type
+and name from the provided typedefs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>end_def</strong> (<em>str</em>) – Either ‘endDef1’ or ‘endDef2’</p></li>
+<li><p><strong>end_def_type</strong> (<em>str</em>) – The type within the end_def.</p></li>
+<li><p><strong>end_def_name</strong> (<em>str</em>) – The name of the relationship attribute applied to the end def’s entity.
+(e.g. columns, table, columnLineages, query)</p></li>
+<li><p><strong>relationship_typedefs</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em>) – A list of dictionaries that follow the relationship type defs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – An relationship dict was not found in the provided typedefs.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The matching relationship type definition.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.util.from_process_lookup_col_lineage">
+<span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.util.</span></span><span class="sig-name descname"><span class="pre">from_process_lookup_col_lineage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">process_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atlas_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relationship_typedefs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.util.from_process_lookup_col_lineage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a process name, find the first entity that matches that process name.
+Given that process entity, find the first relationship that contains that
+process type as an endDef2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>process_name</strong> (<em>str</em>) – The name of the process that you want to find.</p></li>
+<li><p><strong>atlas_entities</strong> (list(<a class="reference internal" href="pyapacheatlas.core.html#pyapacheatlas.core.entity.AtlasEntity" title="pyapacheatlas.core.entity.AtlasEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtlasEntity</span></code></a>)) – The list of atlas entities to search over.</p></li>
+<li><p><strong>relationship_typedefs</strong> (<em>list</em><em>(</em><em>dict</em><em>)</em>) – The list of relationship type definitions to extract from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – A matching entity or matching relationship type was not found in
+the provided entities or type def.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The endDef1 type from the discovered process relationship type.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.util.string_to_classification">
+<span class="sig-prename descclassname"><span class="pre">pyapacheatlas.readers.util.</span></span><span class="sig-name descname"><span class="pre">string_to_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">';'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.util.string_to_classification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a string of text into classifications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>string</strong> (<em>str</em>) – The string that contains one or more classifications.</p></li>
+<li><p><strong>sep</strong> (<em>str</em>) – The separator to split the <cite>string</cite> parameter on.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of AtlasClassification objects as dicts.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pyapacheatlas.readers package</a><ul>
+<li><a class="reference internal" href="#module-pyapacheatlas.readers.reader">pyapacheatlas.readers.reader module</a></li>
+<li><a class="reference internal" href="#module-pyapacheatlas.readers.lineagemixin">pyapacheatlas.readers.lineagemixin module</a></li>
+<li><a class="reference internal" href="#module-pyapacheatlas.readers.excel">pyapacheatlas.readers.excel module</a></li>
+<li><a class="reference internal" href="#module-pyapacheatlas.readers.util">pyapacheatlas.readers.util module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyapacheatlas.core.html"
+                        title="previous chapter">pyapacheatlas.core package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyapacheatlas.scaffolding.html"
+                        title="next chapter">pyapacheatlas.scaffolding package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyapacheatlas.readers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.scaffolding.html" title="pyapacheatlas.scaffolding package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyapacheatlas.core.html" title="pyapacheatlas.core package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyApacheAtlas 0.13.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pyapacheatlas</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pyapacheatlas.html" >pyapacheatlas package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.readers package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

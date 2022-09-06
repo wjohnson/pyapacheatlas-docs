@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.PurviewGlossaryClient.get\_termAssignedEntities
+==========================================================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. automethod:: PurviewGlossaryClient.get_termAssignedEntities

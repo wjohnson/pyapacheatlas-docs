@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.excel.ExcelReader.parse\_bulk\_entities
+=============================================================
+
+.. currentmodule:: pyapacheatlas.readers.excel
+
+.. automethod:: ExcelReader.parse_bulk_entities

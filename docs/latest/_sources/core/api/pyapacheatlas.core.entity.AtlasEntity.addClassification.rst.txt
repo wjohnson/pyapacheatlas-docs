@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasEntity.addClassification
+=======================================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasEntity.addClassification

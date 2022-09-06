@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.classify\_entity
+======================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.classify_entity

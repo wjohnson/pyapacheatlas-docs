@@ -1,0 +1,32 @@
+﻿pyapacheatlas.core.typedef.EntityTypeDef
+========================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: EntityTypeDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~EntityTypeDef.__init__
+      ~EntityTypeDef.addAttributeDef
+      ~EntityTypeDef.addRelationshipAttributeDef
+      ~EntityTypeDef.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~EntityTypeDef.attributeDefs
+      ~EntityTypeDef.relationshipAttributeDefs
+   
+   

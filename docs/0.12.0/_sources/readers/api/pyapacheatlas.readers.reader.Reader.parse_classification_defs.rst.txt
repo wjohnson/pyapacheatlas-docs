@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.parse\_classification\_defs
+===============================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.parse_classification_defs

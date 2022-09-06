@@ -1,0 +1,23 @@
+﻿pyapacheatlas.core.entity.AtlasClassification
+=============================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. autoclass:: AtlasClassification
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasClassification.__init__
+      ~AtlasClassification.to_json
+   
+   
+
+   
+   
+   

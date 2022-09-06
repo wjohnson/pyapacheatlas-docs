@@ -1,0 +1,23 @@
+﻿pyapacheatlas.auth.basic.BasicAuthentication
+============================================
+
+.. currentmodule:: pyapacheatlas.auth.basic
+
+.. autoclass:: BasicAuthentication
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BasicAuthentication.__init__
+      ~BasicAuthentication.get_authentication_headers
+   
+   
+
+   
+   
+   

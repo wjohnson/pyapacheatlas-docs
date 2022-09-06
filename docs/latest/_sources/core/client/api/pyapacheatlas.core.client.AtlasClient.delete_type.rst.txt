@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.delete\_type
+==================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.delete_type

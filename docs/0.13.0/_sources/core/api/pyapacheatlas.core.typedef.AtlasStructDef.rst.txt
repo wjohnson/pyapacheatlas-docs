@@ -1,0 +1,30 @@
+﻿pyapacheatlas.core.typedef.AtlasStructDef
+=========================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: AtlasStructDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasStructDef.__init__
+      ~AtlasStructDef.addAttributeDef
+      ~AtlasStructDef.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AtlasStructDef.attributeDefs
+   
+   

@@ -1,0 +1,31 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.GlossaryClient
+=========================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. autoclass:: GlossaryClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GlossaryClient.__init__
+      ~GlossaryClient.assignTerm
+      ~GlossaryClient.delete_assignedTerm
+      ~GlossaryClient.delete_term
+      ~GlossaryClient.generate_request_headers
+      ~GlossaryClient.get_glossary
+      ~GlossaryClient.get_term
+      ~GlossaryClient.get_termAssignedEntities
+      ~GlossaryClient.upload_term
+      ~GlossaryClient.upload_terms
+   
+   
+
+   
+   
+   

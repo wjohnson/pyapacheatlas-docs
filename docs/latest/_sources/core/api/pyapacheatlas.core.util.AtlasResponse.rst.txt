@@ -1,0 +1,22 @@
+﻿pyapacheatlas.core.util.AtlasResponse
+=====================================
+
+.. currentmodule:: pyapacheatlas.core.util
+
+.. autoclass:: AtlasResponse
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasResponse.__init__
+   
+   
+
+   
+   
+   

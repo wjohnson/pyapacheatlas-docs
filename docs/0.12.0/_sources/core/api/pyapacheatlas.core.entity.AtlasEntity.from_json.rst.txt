@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasEntity.from\_json
+================================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasEntity.from_json

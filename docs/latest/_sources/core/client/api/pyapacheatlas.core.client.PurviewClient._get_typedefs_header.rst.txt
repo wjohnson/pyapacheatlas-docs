@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.\_get\_typedefs\_header
+===============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient._get_typedefs_header

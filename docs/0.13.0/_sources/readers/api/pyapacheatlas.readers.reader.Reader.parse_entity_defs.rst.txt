@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.parse\_entity\_defs
+=======================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.parse_entity_defs

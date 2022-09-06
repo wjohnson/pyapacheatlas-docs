@@ -1,0 +1,23 @@
+﻿pyapacheatlas.core.typedef.ParentEndDef
+=======================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: ParentEndDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ParentEndDef.__init__
+      ~ParentEndDef.to_json
+   
+   
+
+   
+   
+   

@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.readers.excel.ExcelReader.make_template &#8212; PyApacheAtlas 0.12.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyApacheAtlas 0.12.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.readers.excel.ExcelReader.make_template</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pyapacheatlas-readers-excel-excelreader-make-template">
+<h1>pyapacheatlas.readers.excel.ExcelReader.make_template<a class="headerlink" href="#pyapacheatlas-readers-excel-excelreader-make-template" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.readers.excel.ExcelReader.make_template">
+<em class="property"><span class="pre">static</span> </em><span class="sig-prename descclassname"><span class="pre">ExcelReader.</span></span><span class="sig-name descname"><span class="pre">make_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.readers.excel.ExcelReader.make_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an Excel template file and write it out to the given filepath.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – The file path to store an XLSX file with the
+template Tables and Columns sheets.</p></li>
+<li><p><strong>bulkEntity_sheet</strong> (<em>str</em>) – Defaults to “BulkEntities”</p></li>
+<li><p><strong>updateLineage_sheet</strong> (<em>str</em>) – Defaults to “UpdateLineage”</p></li>
+<li><p><strong>columnMapping_sheet</strong> (<em>str</em>) – Defaults to “ColumnMapping”</p></li>
+<li><p><strong>entityDef_sheet</strong> (<em>str</em>) – Defaults to “EntityDefs”</p></li>
+<li><p><strong>classificationDef_sheet</strong> (<em>str</em>) – Defaults to “ClassificationDefs”</p></li>
+<li><p><strong>include_deprecated</strong> (<em>bool</em>) – Set to True if you want to include tabs that have been deprecated.
+For this release, it includes TablesLineage and
+FineGrainColumnLineage.</p></li>
+<li><p><strong>table_sheet</strong> (<em>str</em>) – Defaults to “TablesLineage”</p></li>
+<li><p><strong>column_sheet</strong> (<em>str</em>) – Defaults to “FineGrainColumnLineage”</p></li>
+<li><p><strong>source_prefix</strong> (<em>str</em>) – Defaults to “Source” and represents the prefix of the columns
+in Excel to be considered related to the source table or column.</p></li>
+<li><p><strong>target_prefix</strong> (<em>str</em>) – Defaults to “Target” and represents the prefix of the columns
+in Excel to be considered related to the target table or column.</p></li>
+<li><p><strong>process_prefix</strong> (<em>str</em>) – Defaults to “Process” and represents the prefix of the columns
+in Excel to be considered related to the table process.</p></li>
+<li><p><strong>column_transformation_name</strong> (<em>str</em>) – Defaults to “transformation” and identifies the column that
+represents the transformation for a specific column.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/readers/api/pyapacheatlas.readers.excel.ExcelReader.make_template.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyApacheAtlas 0.12.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.readers.excel.ExcelReader.make_template</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

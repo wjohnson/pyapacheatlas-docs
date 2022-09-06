@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasClassification.to\_json
+======================================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasClassification.to_json

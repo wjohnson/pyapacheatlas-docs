@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.excel.ExcelReader.parse\_classification\_defs
+===================================================================
+
+.. currentmodule:: pyapacheatlas.readers.excel
+
+.. automethod:: ExcelReader.parse_classification_defs

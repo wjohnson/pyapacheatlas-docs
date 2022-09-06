@@ -1,0 +1,54 @@
+﻿pyapacheatlas.core.client.AtlasClient
+=====================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. autoclass:: AtlasClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasClient.__init__
+      ~AtlasClient.assignTerm
+      ~AtlasClient.classify_bulk_entities
+      ~AtlasClient.classify_entity
+      ~AtlasClient.declassify_entity
+      ~AtlasClient.delete_assignedTerm
+      ~AtlasClient.delete_businessMetadata
+      ~AtlasClient.delete_entity
+      ~AtlasClient.delete_entity_labels
+      ~AtlasClient.delete_relationship
+      ~AtlasClient.delete_type
+      ~AtlasClient.delete_typedefs
+      ~AtlasClient.generate_request_headers
+      ~AtlasClient.get_all_typedefs
+      ~AtlasClient.get_entity
+      ~AtlasClient.get_entity_classification
+      ~AtlasClient.get_entity_classifications
+      ~AtlasClient.get_entity_header
+      ~AtlasClient.get_entity_lineage
+      ~AtlasClient.get_glossary
+      ~AtlasClient.get_glossary_term
+      ~AtlasClient.get_relationship
+      ~AtlasClient.get_single_entity
+      ~AtlasClient.get_termAssignedEntities
+      ~AtlasClient.get_typedef
+      ~AtlasClient.partial_update_entity
+      ~AtlasClient.search_entities
+      ~AtlasClient.update_businessMetadata
+      ~AtlasClient.update_entity_labels
+      ~AtlasClient.upload_entities
+      ~AtlasClient.upload_relationship
+      ~AtlasClient.upload_terms
+      ~AtlasClient.upload_typedefs
+   
+   
+
+   
+   
+   

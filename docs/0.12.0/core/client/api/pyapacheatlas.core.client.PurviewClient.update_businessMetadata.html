@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyapacheatlas.core.client.PurviewClient.update_businessMetadata &#8212; PyApacheAtlas 0.12.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/nature.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PyApacheAtlas 0.12.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core.client.PurviewClient.update_businessMetadata</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pyapacheatlas-core-client-purviewclient-update-businessmetadata">
+<h1>pyapacheatlas.core.client.PurviewClient.update_businessMetadata<a class="headerlink" href="#pyapacheatlas-core-client-purviewclient-update-businessmetadata" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyapacheatlas.core.client.PurviewClient.update_businessMetadata">
+<span class="sig-prename descclassname"><span class="pre">PurviewClient.</span></span><span class="sig-name descname"><span class="pre">update_businessMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">businessMetadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyapacheatlas.core.client.PurviewClient.update_businessMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the business metadata. Provide a businessMetadata dictionary
+that has a key for the businessmetadata type def name and the value
+is a dictionary with keys of each attribute you want to add/update.</p>
+<p>If I have a business metadata typedef of ‘operations`, with attributes
+‘expenseCode’ and ‘criticality’, my businessMetadata might be:
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+{</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="simple">
+<dt>‘operations’: {</dt><dd><p>‘expenseCode’: ‘123’,
+‘criticality’: ‘low’</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>guid</strong> (<em>str</em>) – The guid for the entity that you want to update business metadata.</p></li>
+<li><p><strong>businessMetadata</strong> (<em>dict</em><em>(</em><em>str</em><em>, </em><em>dict</em><em>)</em>) – The business metadata you want to update with key of the
+businessMetadata type def and value of a dictionary with
+keys for each attribute you want removed and value</p></li>
+<li><p><strong>force_update</strong> (<em>bool</em>) – Defaults to False where you are only overwriting the business
+attributes you specify in businessMetadata. Set to True to
+overwrite all existing business metadata attributes with the value
+you provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dict containing a message indicating success. Otherwise
+it will raise an AtlasException.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(str, str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/core/client/api/pyapacheatlas.core.client.PurviewClient.update_businessMetadata.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">PyApacheAtlas 0.12.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyapacheatlas.core.client.PurviewClient.update_businessMetadata</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Will Johnson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

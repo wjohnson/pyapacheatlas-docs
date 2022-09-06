@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.collections.PurviewCollectionsClient.list\_collections
+=========================================================================
+
+.. currentmodule:: pyapacheatlas.core.collections
+
+.. automethod:: PurviewCollectionsClient.list_collections

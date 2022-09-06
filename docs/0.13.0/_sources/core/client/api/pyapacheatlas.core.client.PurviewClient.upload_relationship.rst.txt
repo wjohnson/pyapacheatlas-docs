@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.upload\_relationship
+============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.upload_relationship

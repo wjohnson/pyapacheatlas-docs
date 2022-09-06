@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.parse\_table\_lineage
+=========================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.parse_table_lineage

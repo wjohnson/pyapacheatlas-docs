@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.get\_glossary
+=======================================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. automethod:: GlossaryClient.get_glossary

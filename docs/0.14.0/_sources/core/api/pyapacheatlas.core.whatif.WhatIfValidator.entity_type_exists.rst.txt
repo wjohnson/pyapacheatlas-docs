@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.whatif.WhatIfValidator.entity\_type\_exists
+==============================================================
+
+.. currentmodule:: pyapacheatlas.core.whatif
+
+.. automethod:: WhatIfValidator.entity_type_exists
