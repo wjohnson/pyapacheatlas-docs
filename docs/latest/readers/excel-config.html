@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Excel Reader Configuration &#8212; PyApacheAtlas 0.16.0 documentation</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'readers/excel-config';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JSON Template Reader" href="reader.html" />
+    <link rel="prev" title="pyapacheatlas.readers.excel.ExcelReader.make_template" href="api/pyapacheatlas.readers.excel.ExcelReader.make_template.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fas fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">PyApacheAtlas 0.16.0 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../core/index.html">
+                        Core
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="index.html">
+                        Template Readers
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../auth/index.html">
+                        Authentication
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+  <i class="fas fa-search"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+  <i class="fas fa-search"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fas fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../core/index.html">
+                        Core
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="index.html">
+                        Template Readers
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../auth/index.html">
+                        Authentication
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="excel.html">
+   Excel Template Reader
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelConfiguration.html">
+     pyapacheatlas.readers.excel.ExcelConfiguration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.html">
+     pyapacheatlas.readers.excel.ExcelReader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_bulk_entities.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_bulk_entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_entity_defs.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_entity_defs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_finegrain_column_lineage.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_finegrain_column_lineage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_table_lineage.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_table_lineage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_table_finegrain_column_lineages.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_table_finegrain_column_lineages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_column_mapping.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_column_mapping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage_with_mappings.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_update_lineage_with_mappings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.parse_classification_defs.html">
+     pyapacheatlas.readers.excel.ExcelReader.parse_classification_defs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.excel.ExcelReader.make_template.html">
+     pyapacheatlas.readers.excel.ExcelReader.make_template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Excel Reader Configuration
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="reader.html">
+   JSON Template Reader
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label class="toctree-toggle" for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.ReaderConfiguration.html">
+     pyapacheatlas.readers.reader.ReaderConfiguration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.html">
+     pyapacheatlas.readers.reader.Reader
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_bulk_entities.html">
+     pyapacheatlas.readers.reader.Reader.parse_bulk_entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_entity_defs.html">
+     pyapacheatlas.readers.reader.Reader.parse_entity_defs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_finegrain_column_lineage.html">
+     pyapacheatlas.readers.reader.Reader.parse_finegrain_column_lineage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_table_lineage.html">
+     pyapacheatlas.readers.reader.Reader.parse_table_lineage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_update_lineage.html">
+     pyapacheatlas.readers.reader.Reader.parse_update_lineage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_column_mapping.html">
+     pyapacheatlas.readers.reader.Reader.parse_column_mapping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.parse_classification_defs.html">
+     pyapacheatlas.readers.reader.Reader.parse_classification_defs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api/pyapacheatlas.readers.reader.Reader.make_template.html">
+     pyapacheatlas.readers.reader.Reader.make_template
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="excel-reader-configuration">
+<h1>Excel Reader Configuration<a class="headerlink" href="#excel-reader-configuration" title="Permalink to this headline">#</a></h1>
+<p>This package supports reading a standard template from an excel file.
+The following shows how to work with the template file and customization
+of the excel file you’re reading from. Again, it’s assumed that you’re
+using this excel template to create table and column lineage between a
+“target” and “source” set of tables and columns.</p>
+<section id="generate-excel-template">
+<h2>Generate Excel Template<a class="headerlink" href="#generate-excel-template" title="Permalink to this headline">#</a></h2>
+<p>After installing PyApacheAtlas, run this command in the terminal to
+create an excel file with the required sheets and columns.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pyapacheatlas</span> <span class="o">--</span><span class="n">make</span><span class="o">-</span><span class="n">template</span> <span class="o">./</span><span class="n">template</span><span class="o">.</span><span class="n">xlsx</span>
+</pre></div>
+</div>
+</section>
+<section id="excel-template-tabs-and-their-uses">
+<h2>Excel Template Tabs and Their Uses<a class="headerlink" href="#excel-template-tabs-and-their-uses" title="Permalink to this headline">#</a></h2>
+<p>The column headers discussed below and that you add are <strong>CASE
+SENSITIVE</strong>.</p>
+<p>The excel template provides several sheets:</p>
+<ul class="simple">
+<li><p>BulkEntities - Used to create or update bulk entities.</p></li>
+<li><p>UpdateLineage - Used to create or update lineage (by creating process
+entities that reference your source and target entities).</p></li>
+<li><p>ColumnMapping - Used to update or create a process entity with the
+columnMapping attribute.</p></li>
+<li><p>EntityDefs - Used to quickly define one or many entity types and
+their additional attributes.</p></li>
+<li><p>ClassificationDefs - Used to quickly define one or many
+classifications. This does not support Purview Classification Rules.</p></li>
+<li><p>TablesLineage - (Deprecated) Used to define the Tables involved in
+this batch’s column level lineage.</p></li>
+<li><p>FineGrainColumnLineage - (Deprecated) Used to define the Columns
+involved in this batch’s column level lineage.</p></li>
+</ul>
+<p>Each tab has a related <code class="docutils literal notranslate"><span class="pre">parse_*</span></code> method in the <code class="docutils literal notranslate"><span class="pre">ExcelReader</span></code>. For
+example, to parse the BulkEntities tab, you would call the
+<code class="docutils literal notranslate"><span class="pre">ExcelReader.parse_bulk_entities</span></code> method and pass in the path to the
+excel file.</p>
+<p>There are two <code class="docutils literal notranslate"><span class="pre">parse_</span></code> methods that combine UpdateLineage with
+ColumnMapping and TablesLineage with FineGrainColumnLineage.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">parse_update_lineage_with_mappings</span></code> which combines the results of
+UpdateLineage and ColumnMapping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parse_table_finegrain_column_lineages</span></code> which combines the results
+of TablesLineage and FineGrainColumnLineage.</p></li>
+</ul>
+<p>For bulk entities, update lineage, column mapping, tables lineage, and
+columns lineage <code class="docutils literal notranslate"><span class="pre">parse_</span></code> methods, you pass the resulting dictionary
+directly to the <code class="docutils literal notranslate"><span class="pre">client.upload_entities</span></code> method to take the contents
+of your spreadsheet and push them to your Atlas / Purview catalog.</p>
+<section id="bulkentities-tab">
+<h3>BulkEntities tab<a class="headerlink" href="#bulkentities-tab" title="Permalink to this headline">#</a></h3>
+<p>In this tab, you bulk load entities along with their attributes
+(e.g. data_type, description, Experts, Owners). The most common use for
+this tab is to just upload a set of tables and their respective columns.
+One row would represent a table and the multiple rows would represent a
+column. In order to make that “relationship” happen, you must provide a
+<code class="docutils literal notranslate"><span class="pre">[Relationship]</span> <span class="pre">table</span></code> column and provide the qualified name of the
+table entity you defined earlier in the sheet. Without that
+[Relationship] table column, the columns would be unattached.</p>
+<p>A special note, be sure that your column and table types (as indicated
+by the <code class="docutils literal notranslate"><span class="pre">typeName</span></code> column) can accept a “Relationship Attribute” of
+“table” and “columns” as they are typically defined. See the <a class="reference external" href="https://github.com/wjohnson/pyapacheatlas/wiki/Column-Lineage:-Hive-Bridge-Style">Column
+Lineage: Hive Bridge
+Style</a>
+page for more details on relationships.</p>
+<section id="column-headers-with-special-meanings">
+<h4>Column Headers with Special Meanings<a class="headerlink" href="#column-headers-with-special-meanings" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[Relationship]</span> <span class="pre">xyz</span></code> takes the cell’s value and adds it to the xyz
+relationship attribute. Replace xyz with whatever your relationship
+attribute’s name is (probably “table” if you’re relating a column to
+a table).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[Relationship]</span> <span class="pre">meanings</span></code> assigns glossary terms to the entity
+you’re uploading. The term you provide (for Purview) must be the
+formal name. If you have a hierarchical term, your formal name will
+look like <code class="docutils literal notranslate"><span class="pre">parent</span> <span class="pre">term_child</span> <span class="pre">term</span></code>. You can provide multiple
+meanings / glossary terms by delimiting with a semi-colon (;) by
+default. This is configurable in the <code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code>.</p>
+<ul>
+<li><p><strong>Note</strong>: You can only apply classifications to NEW entities by
+the design of the <code class="docutils literal notranslate"><span class="pre">/entity/bulk</span></code> endpoint. To update an existing
+entity’s classifications, you must do so programmatically with the
+<a class="reference external" href="https://wjohnson.github.io/pyapacheatlas-docs/latest/pyapacheatlas.core.html#pyapacheatlas.core.client.AtlasClient.assignTerm">assignTerm</a>
+method.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[root]</span> <span class="pre">classifications</span></code> assigns classifications to the uploaded
+entity. The value in the spreadsheet must match the classification’s
+formal name and not the friendly name. You can provide multiple
+classifications by delimiting with a semi-colon (;) by default. This
+is configurable in the <code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code>.</p>
+<ul>
+<li><p><strong>Note</strong>: You can only apply classifications to NEW entities by
+the design of the <code class="docutils literal notranslate"><span class="pre">/entity/bulk</span></code> endpoint. To update an existing
+entity’s classifications, you must do so programmatically with the
+<a class="reference external" href="https://wjohnson.github.io/pyapacheatlas-docs/latest/pyapacheatlas.core.html#pyapacheatlas.core.client.AtlasClient.classify_bulk_entities">classify_bulk_entities</a>
+or
+<a class="reference external" href="https://wjohnson.github.io/pyapacheatlas-docs/latest/pyapacheatlas.core.html#pyapacheatlas.core.client.AtlasClient.classify_entity">classify_entity</a>
+method.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">experts</span></code> or <code class="docutils literal notranslate"><span class="pre">owners</span></code> (for Azure Purview) lets you provide one or
+many Azure Active Directory object ids by delimiting with a
+semi-colon (;) by default. This is configurable in the
+<code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code>. It only accepts AAD object ids because that
+is what Purview actually stores. The Purview UI calls the Microsoft
+graph API on your behalf. PyApacheAtlas does not do this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[root]</span> <span class="pre">labels</span></code> (for Apache Atlas this is NOT sensitivity labels
+for Purview) lets you provide one or many labels by delimiting with a
+semi-colon (;) by default. This is configurable in the
+<code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code>.</p>
+<ul>
+<li><p><strong>Note</strong>: You can only apply labels to NEW entities by the design
+of the <code class="docutils literal notranslate"><span class="pre">/entity/bulk</span></code> endpoint. To update an existing entity’s
+labels, you must do so programmatically with the
+<code class="docutils literal notranslate"><span class="pre">update_entity_labels</span></code> method.</p></li>
+</ul>
+</li>
+</ul>
+<p>All remaining column headers will convert into attributes for the given
+entity. If the cell is blank for a given column, it will not be added to
+the entity.</p>
+</section>
+</section>
+<section id="updatelineage-tab">
+<h3>UpdateLineage tab<a class="headerlink" href="#updatelineage-tab" title="Permalink to this headline">#</a></h3>
+<p>The Update Lineage tab is meant to create or update lineage between two
+or more entities.</p>
+<p>In the example below, it creates a Process entity that links the target
+and source datasets.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Target
+t
+ypeName</p></th>
+<th class="head"><p>Target
+qualif
+iedName</p></th>
+<th class="head"><p>Source
+t
+ypeName</p></th>
+<th class="head"><p>Source
+qualif
+iedName</p></th>
+<th class="head"><p>Process
+name</p></th>
+<th class="head"><p>Process
+qualif
+iedName</p></th>
+<th class="head"><p>Process
+t
+ypeName</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DataSet</p></td>
+<td><p>custom
+://targ
+et-that
+-exists</p></td>
+<td><p>DataSet</p></td>
+<td><p>custom
+://sour
+ce-that
+-exists</p></td>
+<td><p>My
+Custom
+Process</p></td>
+<td><p>custom
+://proc
+ess-to-
+be-made</p></td>
+<td><p>Process</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>If your target has multiple inputs, you should specify the target
+only once then specify the multiple sources on separate lines with
+the same Process values repeated on each line.</p></li>
+<li><p>If you want to ensure that the Process has an empty list for an input
+or output, put <code class="docutils literal notranslate"><span class="pre">N/A</span></code> as the Target or Source qualifiedName (to
+negate the Outputs or Inputs attribute respectively).</p></li>
+</ul>
+</section>
+<section id="columnmapping-tab">
+<h3>ColumnMapping tab<a class="headerlink" href="#columnmapping-tab" title="Permalink to this headline">#</a></h3>
+<p>The Column Mapping tab takes in a Process entity, the qualified names of
+the Source and Target tables, and the column names that should be
+mapped. <strong>Note</strong>: Your Process entity type MUST HAVE THE columnMapping
+ATTRIBUTE for this to work in Azure Purview. The default Process type
+does NOT have this attribute, you must create your own.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Target
+column</p></th>
+<th class="head"><p>Target
+qualif
+iedName</p></th>
+<th class="head"><p>Source
+column</p></th>
+<th class="head"><p>Source
+qualif
+iedName</p></th>
+<th class="head"><p>Process
+name</p></th>
+<th class="head"><p>Process
+qualif
+iedName</p></th>
+<th class="head"><p>Process
+t
+ypeName</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>d
+estcolA</p></td>
+<td><p>custom
+://targ
+et-that
+-exists</p></td>
+<td><p>colA</p></td>
+<td><p>custom
+://sour
+ce-that
+-exists</p></td>
+<td><p>My
+Custom
+Process</p></td>
+<td><p>custom
+://proc
+ess-to-
+be-made</p></td>
+<td><p>Custom
+Process</p></td>
+</tr>
+<tr class="row-odd"><td><p>d
+estcolB</p></td>
+<td><p>custom
+://targ
+et-that
+-exists</p></td>
+<td><p>colB</p></td>
+<td><p>custom
+://sour
+ce-that
+-exists</p></td>
+<td><p>My
+Custom
+Process</p></td>
+<td><p>custom
+://proc
+ess-to-
+be-made</p></td>
+<td><p>Custom
+Process</p></td>
+</tr>
+<tr class="row-even"><td><p>destc
+olCombo</p></td>
+<td><p>custom
+://targ
+et-that
+-exists</p></td>
+<td><p>colC</p></td>
+<td><p>custom
+://sour
+ce-that
+-exists</p></td>
+<td><p>My
+Custom
+Process</p></td>
+<td><p>custom
+://proc
+ess-to-
+be-made</p></td>
+<td><p>Custom
+Process</p></td>
+</tr>
+<tr class="row-odd"><td><p>destc
+olCombo</p></td>
+<td><p>custom
+://targ
+et-that
+-exists</p></td>
+<td><p>colD</p></td>
+<td><p>custom
+://sour
+ce-that
+-exists</p></td>
+<td><p>My
+Custom
+Process</p></td>
+<td><p>custom
+://proc
+ess-to-
+be-made</p></td>
+<td><p>Custom
+Process</p></td>
+</tr>
+</tbody>
+</table>
+<p>This sample will create or update the CustomProcess type with a
+qualified name of <code class="docutils literal notranslate"><span class="pre">custom://process-to-be-made</span></code> and indicate the
+following mappings:</p>
+<ul class="simple">
+<li><p>From <code class="docutils literal notranslate"><span class="pre">custom-source-that-exists</span></code> to <code class="docutils literal notranslate"><span class="pre">target-that-exists</span></code>…</p>
+<ul>
+<li><p>colA maps to destcolA</p></li>
+<li><p>colB maps to destcolB</p></li>
+<li><p>colC maps to destcolCombo</p></li>
+<li><p>colD maps to destcolCombo</p></li>
+</ul>
+</li>
+</ul>
+<p>This could be altered to have multiple sources and targets with a more
+complex mapping.</p>
+<p><strong>Note</strong>: The Source and Target qualified names MUST be inputs and
+outputs on the given Process entity for the Purview Lineage UI to show
+the column mapping.</p>
+</section>
+<section id="entitydefs-tab">
+<h3>EntityDefs tab<a class="headerlink" href="#entitydefs-tab" title="Permalink to this headline">#</a></h3>
+<p>Supports the creation of custom entity types. By default they are
+subtypes of DataSet (most common thing you’ll need).</p>
+<p>Each row represents one attribute that you want to add to your custom
+type. The schema section below lists the various fields that can be
+filled in. However, if you fill in only the type and attribute name
+information, the attribute will be, by default, a string attribute. You
+can find additional information about the defaults in the <a class="reference external" href="http://atlas.apache.org/api/v2/json_AtlasAttributeDef.html">Apache Atlas
+docs</a>.</p>
+<section id="column-headers-with-special-meanings-1">
+<span id="id1"></span><h4>Column Headers with Special Meanings<a class="headerlink" href="#column-headers-with-special-meanings-1" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Entity</span> <span class="pre">superTypes</span></code> this will allow you to define one or many super
+types. If you want to create a custom Process type, you would add
+this column header and enter Process for the relevant row’s cell
+value. This is delimited with a semi-colon (;) by default. This is
+configurable in the <code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code>. This should be specified
+once for the given type all other rows can be left blank for this
+column.</p></li>
+</ul>
+</section>
+</section>
+<section id="classificationdefs-tab">
+<h3>ClassificationDefs tab<a class="headerlink" href="#classificationdefs-tab" title="Permalink to this headline">#</a></h3>
+<p>Supports the creation of classification types. This does not support the
+creation of Classification Rules in Azure Purview.</p>
+<p>You need only provide the classification name, description, and the
+entity types that it should apply to.</p>
+<p>The entity types is most likely going to be DataSet by you may be more
+specific and specify multiple types in the entityTypes cell by
+delimiting with a semi-colon (;) by default. This is configurable in the
+<code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code>.</p>
+</section>
+<section id="tableslineage-and-finegraincolumnslineage-tabs-deprecated">
+<h3>TablesLineage and FineGrainColumnsLineage tabs (DEPRECATED)<a class="headerlink" href="#tableslineage-and-finegraincolumnslineage-tabs-deprecated" title="Permalink to this headline">#</a></h3>
+<p>These tabs are being deprecated and will not receive new updates.</p>
+<p>The Tables and Columns sheets require a set of “Target” and “Source”
+excel columns. * Target / Source table is the unique name of the table.
+* Target / Source column is the column name on that respective table.
+Its qualified name will <code class="docutils literal notranslate"><span class="pre">{Table}#{Column}</span></code>. * Target / Source type
+are the pre-defined table type definitions. * Process name is the
+unique name of the process being used to create the Target from the
+Source. * Process type is the pre-defined type definition. * Process
+name and type are only provided on the Tables sheet. * Target / Source
+classifications are the table or column level classifications. They are
+separated by semicolons (;) in the same cell. This can be customized
+with the
+<code class="docutils literal notranslate"><span class="pre">ExcelConfiguration(separate</span> <span class="pre">*</span> <span class="pre">A</span> <span class="pre">column</span> <span class="pre">Transformation</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">expression</span> <span class="pre">that</span> <span class="pre">generated</span> <span class="pre">the</span> <span class="pre">column.</span>&#160; <span class="pre">For</span> <span class="pre">example</span></code>a
++ b<code class="docutils literal notranslate"><span class="pre">or</span></code>CASE WHEN x=1 THEN … ELSE … END`.</p>
+<p>In addition, you can provide <strong>additional attributes</strong> for the table or
+column by adding another column and using the “Target”, “Source”, or
+“Process” prefix.</p>
+<p>For example, if you add a “Target data-type” attribute to the Columns
+sheet, the <code class="docutils literal notranslate"><span class="pre">parse_lineages</span></code> function would add that column’s values to
+the generated Target entity’s attributes. It would appear as:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;attributes&quot;</span><span class="p">:{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SomeName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;qualifiedName&quot;</span><span class="p">:</span> <span class="s2">&quot;SomeQualifiedName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;data-type&quot;</span><span class="p">:</span> <span class="s2">&quot;Value-from-cell&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="required-columns-for-each-tab">
+<h3>Required Columns for Each Tab<a class="headerlink" href="#required-columns-for-each-tab" title="Permalink to this headline">#</a></h3>
+<p>This section defines what are the required headers for each tab.</p>
+<p>Please note that the column names are <strong>case sensitive</strong> and should
+follow Java camelCase style unless otherwise noted.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;BulkEntities&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;typeName&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;qualifiedName&quot;</span>
+<span class="p">]</span>
+<span class="s2">&quot;ClassificationDefs&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;classificationName&quot;</span><span class="p">,</span> <span class="s2">&quot;entityTypes&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span>
+<span class="p">]</span>
+<span class="s2">&quot;ColumnMapping&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Source qualifiedName&quot;</span><span class="p">,</span> <span class="s2">&quot;Source column&quot;</span><span class="p">,</span> <span class="s2">&quot;Target qualifiedName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Target column&quot;</span><span class="p">,</span> <span class="s2">&quot;Process qualifiedName&quot;</span><span class="p">,</span> <span class="s2">&quot;Process typeName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Process name&quot;</span>
+<span class="p">]</span>
+<span class="s2">&quot;EntityDefs&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Entity TypeName&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;isOptional&quot;</span><span class="p">,</span> <span class="s2">&quot;isUnique&quot;</span><span class="p">,</span> <span class="s2">&quot;defaultValue&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;typeName&quot;</span><span class="p">,</span> <span class="s2">&quot;displayName&quot;</span><span class="p">,</span> <span class="s2">&quot;valuesMinCount&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;valuesMaxCount&quot;</span><span class="p">,</span> <span class="s2">&quot;cardinality&quot;</span><span class="p">,</span> <span class="s2">&quot;includeInNotification&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;indexType&quot;</span><span class="p">,</span> <span class="s2">&quot;isIndexable&quot;</span>
+<span class="p">]</span>
+<span class="s2">&quot;UpdateLineage&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Target typeName&quot;</span><span class="p">,</span> <span class="s2">&quot;Target qualifiedName&quot;</span><span class="p">,</span> <span class="s2">&quot;Source typeName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source qualifiedName&quot;</span><span class="p">,</span> <span class="s2">&quot;Process name&quot;</span><span class="p">,</span> <span class="s2">&quot;Process qualifiedName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Process typeName&quot;</span>
+<span class="p">]</span>
+<span class="s2">&quot;FineGrainColumnLineage&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Target table&quot;</span><span class="p">,</span> <span class="s2">&quot;Target column&quot;</span><span class="p">,</span> <span class="s2">&quot;Target classifications&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source table&quot;</span><span class="p">,</span> <span class="s2">&quot;Source column&quot;</span><span class="p">,</span> <span class="s2">&quot;Source classifications&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;transformation&quot;</span>
+<span class="p">]</span>
+<span class="s2">&quot;TablesLineage&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Target table&quot;</span><span class="p">,</span> <span class="s2">&quot;Target type&quot;</span><span class="p">,</span> <span class="s2">&quot;Target classifications&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Source table&quot;</span><span class="p">,</span> <span class="s2">&quot;Source type&quot;</span><span class="p">,</span> <span class="s2">&quot;Source classifications&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Process name&quot;</span><span class="p">,</span> <span class="s2">&quot;Process type&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reading-excel-using-the-parse-family-of-methods">
+<h2>Reading Excel using the <code class="docutils literal notranslate"><span class="pre">parse_*</span></code> family of methods<a class="headerlink" href="#reading-excel-using-the-parse-family-of-methods" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">parse_*</span></code> functions facilitates reading the excel file and
+extracting out the content into Python / Json objects.</p>
+<p>There are many
+<a class="reference external" href="https://github.com/wjohnson/pyapacheatlas/tree/master/samples/excel">samples</a>
+that will populate an example spreadsheet for you.</p>
+</section>
+<section id="customizing-the-template-and-excel-configuration">
+<h2>Customizing the Template and Excel Configuration<a class="headerlink" href="#customizing-the-template-and-excel-configuration" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ExcelConfiguration</span></code> class provides the ability to customize how
+to read your Excel file.</p>
+<p>When you instantiate the ExcelConfiguration, you can provide the
+following parameters:</p>
+<ul class="simple">
+<li><p>column_sheet: The name of the columns sheet. Defaults to “Columns”.</p></li>
+<li><p>table_sheet: The name of the table sheet. Defaults to “Tables”.</p></li>
+<li><p>entityDef_sheet: The name of the entity definition sheet. Defaults to
+“EntityDefs”.</p></li>
+<li><p>source_prefix:Defaults to “Source” and represents the prefix of the
+columns in Excel to be considered related to the source table or
+column.</p></li>
+<li><p>target_prefix: Defaults to “Target” and represents the prefix of the
+columns in Excel to be considered related to the target table or
+column.</p></li>
+<li><p>process_prefix: Defaults to “Process” and represents the prefix of
+the columns in Excel to be considered related to the table process.</p></li>
+<li><p>column_transformation_name: Defaults to “Transformation” and
+identifies the column that represents the transformation for a
+specific column.</p></li>
+<li><p>value_separator: Defaults to ‘;’ (semi-colon) and provides the way
+multi-valued fields are parsed (currently only supported for
+classifications).</p></li>
+</ul>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="api/pyapacheatlas.readers.excel.ExcelReader.make_template.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">pyapacheatlas.readers.excel.ExcelReader.make_template</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="reader.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">JSON Template Reader</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-excel-template">
+   Generate Excel Template
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#excel-template-tabs-and-their-uses">
+   Excel Template Tabs and Their Uses
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bulkentities-tab">
+     BulkEntities tab
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#column-headers-with-special-meanings">
+       Column Headers with Special Meanings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#updatelineage-tab">
+     UpdateLineage tab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#columnmapping-tab">
+     ColumnMapping tab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entitydefs-tab">
+     EntityDefs tab
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#column-headers-with-special-meanings-1">
+       Column Headers with Special Meanings
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classificationdefs-tab">
+     ClassificationDefs tab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tableslineage-and-finegraincolumnslineage-tabs-deprecated">
+     TablesLineage and FineGrainColumnsLineage tabs (DEPRECATED)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#required-columns-for-each-tab">
+     Required Columns for Each Tab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-excel-using-the-parse-family-of-methods">
+   Reading Excel using the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     parse_*
+    </span>
+   </code>
+   family of methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customizing-the-template-and-excel-configuration">
+   Customizing the Template and Excel Configuration
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../_sources/readers/excel-config.rst.txt">
+        <i class="fas fa-file-alt"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2024, Will Johnson.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

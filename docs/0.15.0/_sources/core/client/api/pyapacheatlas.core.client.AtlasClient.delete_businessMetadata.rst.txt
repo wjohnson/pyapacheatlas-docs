@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.delete\_businessMetadata
+==============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.delete_businessMetadata

@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasProcess.addBusinessAttribute
+===========================================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasProcess.addBusinessAttribute

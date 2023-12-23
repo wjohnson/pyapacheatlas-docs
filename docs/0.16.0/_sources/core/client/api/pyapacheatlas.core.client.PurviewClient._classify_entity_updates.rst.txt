@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.\_classify\_entity\_updates
+===================================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient._classify_entity_updates

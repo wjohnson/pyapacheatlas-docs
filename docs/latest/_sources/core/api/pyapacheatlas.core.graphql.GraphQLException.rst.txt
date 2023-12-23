@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.graphql.GraphQLException
+===========================================
+
+.. currentmodule:: pyapacheatlas.core.graphql
+
+.. autoexception:: GraphQLException

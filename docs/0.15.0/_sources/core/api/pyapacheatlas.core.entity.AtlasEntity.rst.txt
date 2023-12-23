@@ -1,0 +1,36 @@
+﻿pyapacheatlas.core.entity.AtlasEntity
+=====================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. autoclass:: AtlasEntity
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasEntity.__init__
+      ~AtlasEntity.addBusinessAttribute
+      ~AtlasEntity.addClassification
+      ~AtlasEntity.addCustomAttribute
+      ~AtlasEntity.addRelationship
+      ~AtlasEntity.from_json
+      ~AtlasEntity.merge
+      ~AtlasEntity.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AtlasEntity.name
+      ~AtlasEntity.qualifiedName
+   
+   

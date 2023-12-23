@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.parse\_bulk\_entities
+=========================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.parse_bulk_entities

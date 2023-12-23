@@ -1,0 +1,23 @@
+﻿pyapacheatlas.core.graphql.GraphQLClient
+========================================
+
+.. currentmodule:: pyapacheatlas.core.graphql
+
+.. autoclass:: GraphQLClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GraphQLClient.__init__
+      ~GraphQLClient.query
+   
+   
+
+   
+   
+   

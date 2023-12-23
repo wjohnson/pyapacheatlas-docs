@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.update\_entity\_tags
+============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.update_entity_tags

@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.util.GuidTracker.get\_guid
+=============================================
+
+.. currentmodule:: pyapacheatlas.core.util
+
+.. automethod:: GuidTracker.get_guid

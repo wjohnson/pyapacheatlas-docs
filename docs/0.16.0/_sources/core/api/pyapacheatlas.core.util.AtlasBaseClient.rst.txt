@@ -1,0 +1,23 @@
+﻿pyapacheatlas.core.util.AtlasBaseClient
+=======================================
+
+.. currentmodule:: pyapacheatlas.core.util
+
+.. autoclass:: AtlasBaseClient
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasBaseClient.__init__
+      ~AtlasBaseClient.generate_request_headers
+   
+   
+
+   
+   
+   

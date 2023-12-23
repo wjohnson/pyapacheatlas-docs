@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.get\_all\_typedefs
+==========================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.get_all_typedefs

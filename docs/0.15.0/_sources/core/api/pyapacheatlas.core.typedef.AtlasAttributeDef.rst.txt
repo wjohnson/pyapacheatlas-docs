@@ -1,0 +1,29 @@
+﻿pyapacheatlas.core.typedef.AtlasAttributeDef
+============================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: AtlasAttributeDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasAttributeDef.__init__
+      ~AtlasAttributeDef.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AtlasAttributeDef.propertiesEnum
+   
+   

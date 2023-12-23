@@ -1,0 +1,6 @@
+﻿pyapacheatlas.auth.base.AtlasAuthBase.get\_authentication\_headers
+==================================================================
+
+.. currentmodule:: pyapacheatlas.auth.base
+
+.. automethod:: AtlasAuthBase.get_authentication_headers

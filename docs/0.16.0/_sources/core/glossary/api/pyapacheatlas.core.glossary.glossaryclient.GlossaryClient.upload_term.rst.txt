@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.upload\_term
+======================================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. automethod:: GlossaryClient.upload_term

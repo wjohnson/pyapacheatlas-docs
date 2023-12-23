@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.entity.AtlasProcess.addInput
+===============================================
+
+.. currentmodule:: pyapacheatlas.core.entity
+
+.. automethod:: AtlasProcess.addInput

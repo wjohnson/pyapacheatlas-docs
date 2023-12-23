@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.get\_single\_entity
+===========================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.get_single_entity

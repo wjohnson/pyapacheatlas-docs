@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.PurviewClient.get\_relationship
+=========================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: PurviewClient.get_relationship

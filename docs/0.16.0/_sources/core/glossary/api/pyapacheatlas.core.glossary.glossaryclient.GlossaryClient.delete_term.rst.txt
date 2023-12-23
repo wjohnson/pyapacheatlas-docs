@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.glossary.glossaryclient.GlossaryClient.delete\_term
+======================================================================
+
+.. currentmodule:: pyapacheatlas.core.glossary.glossaryclient
+
+.. automethod:: GlossaryClient.delete_term

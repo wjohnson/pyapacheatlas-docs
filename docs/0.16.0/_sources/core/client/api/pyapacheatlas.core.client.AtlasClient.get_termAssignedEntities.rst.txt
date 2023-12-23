@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.client.AtlasClient.get\_termAssignedEntities
+===============================================================
+
+.. currentmodule:: pyapacheatlas.core.client
+
+.. automethod:: AtlasClient.get_termAssignedEntities

@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.discovery.purview.PurviewDiscoveryClient.suggest
+===================================================================
+
+.. currentmodule:: pyapacheatlas.core.discovery.purview
+
+.. automethod:: PurviewDiscoveryClient.suggest

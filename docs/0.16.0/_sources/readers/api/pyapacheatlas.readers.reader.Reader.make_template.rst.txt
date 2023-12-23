@@ -1,0 +1,6 @@
+﻿pyapacheatlas.readers.reader.Reader.make\_template
+==================================================
+
+.. currentmodule:: pyapacheatlas.readers.reader
+
+.. automethod:: Reader.make_template

@@ -1,0 +1,29 @@
+﻿pyapacheatlas.core.typedef.AtlasRelationshipAttributeDef
+========================================================
+
+.. currentmodule:: pyapacheatlas.core.typedef
+
+.. autoclass:: AtlasRelationshipAttributeDef
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AtlasRelationshipAttributeDef.__init__
+      ~AtlasRelationshipAttributeDef.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AtlasRelationshipAttributeDef.propertiesEnum
+   
+   

@@ -1,0 +1,6 @@
+﻿pyapacheatlas.core.whatif.WhatIfValidator.entity\_has\_invalid\_attributes
+==========================================================================
+
+.. currentmodule:: pyapacheatlas.core.whatif
+
+.. automethod:: WhatIfValidator.entity_has_invalid_attributes
